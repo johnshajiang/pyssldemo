@@ -16,14 +16,14 @@ rm CA_RSA.srl SERVER_RSA.csr CLIENT_RSA.csr
 
 #Generate ECDSA CA, server and client end entity certificates
 openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 -pkeyopt ec_param_enc:named_curve -out CA_ECDSA.key
-openssl req -x509 -new -key CA_ECDSA.key -subj "/CN=CA-ECDSA" -sha256 -out CA_ECDSA.cer
+openssl req -x509 -new -key CA_ECDSA.key -days 3650 -subj "/CN=CA-ECDSA" -sha256 -out CA_ECDSA.cer
 
 openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 -pkeyopt ec_param_enc:named_curve -out SERVER_ECDSA.key
 openssl req -new -key SERVER_ECDSA.key -subj "/CN=SERVER-ECDSA" -sha256 -out SERVER_ECDSA.csr
-openssl x509 -req -CAcreateserial -in SERVER_ECDSA.csr -sha256 -CA CA_ECDSA.cer -CAkey CA_ECDSA.key -out SERVER_ECDSA.cer
+openssl x509 -req -CAcreateserial -days 3650 -in SERVER_ECDSA.csr -sha256 -CA CA_ECDSA.cer -CAkey CA_ECDSA.key -out SERVER_ECDSA.cer
 
 openssl genpkey -algorithm ec -pkeyopt ec_paramgen_curve:P-256 -pkeyopt ec_param_enc:named_curve -out CLIENT_ECDSA.key
 openssl req -new -key CLIENT_ECDSA.key -subj "/CN=CLIENT-ECDSA" -sha256 -out CLIENT_ECDSA.csr
-openssl x509 -req -CAcreateserial -in CLIENT_ECDSA.csr -sha256 -CA CA_ECDSA.cer -CAkey CA_ECDSA.key -out CLIENT_ECDSA.cer
+openssl x509 -req -CAcreateserial -days 3650 -in CLIENT_ECDSA.csr -sha256 -CA CA_ECDSA.cer -CAkey CA_ECDSA.key -out CLIENT_ECDSA.cer
 
 rm CA_ECDSA.srl SERVER_ECDSA.csr CLIENT_ECDSA.csr
