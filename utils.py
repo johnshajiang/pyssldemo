@@ -58,7 +58,7 @@ def openssl_cs(cipher_suite):
         return None
 
 
-CERT_DIR = os.getenv('TLSTEST.CERT.DIR')
+CERT_DIR = os.getenv('PYSSLDEMO.CERT.DIR')
 
 
 def get_cert_path(cert_file):
@@ -68,7 +68,7 @@ def get_cert_path(cert_file):
 def create_context(protocol, cipher_suite):
     """
     Create SSL context with specified protocol and cipher suite.
-    The CA and end entity certificate are automatically determined by the cipher suite
+    The CA and end entity certificate are automatically determined by the cipher suite.
     """
 
     _context = ssl.SSLContext()
