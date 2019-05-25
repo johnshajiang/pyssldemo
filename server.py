@@ -19,17 +19,17 @@ class Server(Peer):
     def start(self):
         self.socket.bind(('localhost', self.port))
         self.socket.listen()
-        print('Server is listening %s' % str(self.socket.getsockname()[1]))
+        print(f'Server is listening {str(self.socket.getsockname()[1])}')
 
         with self.context.wrap_socket(self.socket, server_side=True) as _server:
             while True:
                 _conn, _addr = _server.accept()
 
-                print('Client address: %s' % str(_addr))
-                print('Negotiated protocol: %s' % _conn.version())
-                print('Negotiated cipher suite: %s' % (_conn.cipher(),))
+                print(f'Client address: {str(_addr)}')
+                print(f'Negotiated protocol: {_conn.version()}')
+                print(f'Negotiated cipher suite: {_conn.cipher()}')
 
-                print('Request: %s' % repr(_conn.recv(1024)))
+                print(f'Request: {_conn.recv(1024)}')
                 _conn.sendall('This is server'.encode())
 
 

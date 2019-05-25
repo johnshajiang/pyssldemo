@@ -21,7 +21,7 @@ class Client(Peer):
             print('connected to server')
 
             _client.sendall('This is client'.encode())
-            print("Response: %s" % str(_client.recv(1024)))
+            print(f'Response: {_client.recv(1024)}')
 
 
 if __name__ == '__main__':

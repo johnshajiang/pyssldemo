@@ -77,5 +77,4 @@ class CertGroup(object):
         self.client_cert = client_cert
 
     def __str__(self):
-        return 'CA: %s\nServer Cert: %s\nClient Cert:%s' % (
-            self.ca, self.server_cert, self.client_cert)
+        return f'CA: {self.ca}\nServer cert: {self.server_cert}\nClient cert:{self.client_cert}'
