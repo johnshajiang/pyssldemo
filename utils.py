@@ -11,6 +11,9 @@ from params import Protocols, KeyExAlgos, CipherSuites
 from certs import Certs, CertGroup
 
 
+SERVER_EXIT_FLAG = b'Exit'
+
+
 def get_cert_group(key_ex_algo):
     """ Assemble CertGroup based on the specified key exchange algorithm """
 
