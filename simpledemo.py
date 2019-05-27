@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     s_thread = ServerThread(Server(protocol, cipher_suite))
     s_thread.start()
-    port = s_thread.server.s_socket.getsockname()[1]
+    port = s_thread.server.get_port()
 
     time.sleep(1) # Wait for server accepting
 

@@ -28,13 +28,16 @@ class Server(Peer):
             server_side=True)
         self.s_socket.bind(('127.0.0.1', port))
         self.s_socket.listen()
-        log(f'Listening {self.s_socket.getsockname()[1]}')
+        log(f'Listening {self.get_port()}')
 
     def __enter__(self):
         pass
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
+
+    def get_port(self):
+        return self.s_socket.getsockname()[1]
 
     def accept(self):
         log('Accepting connection ...')
