@@ -5,7 +5,7 @@ Certificates and the associated private keys
 """
 
 from enum import Enum, unique
-from params import KeyAlgos, SigAlgos, KeyExAlgos, HashAlgos
+from params import KeyAlgos, SigAlgos, HashAlgos
 
 
 class Cert(object):

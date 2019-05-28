@@ -13,7 +13,7 @@ import utils
 
 
 class Client(Peer):
-    """ TLS client on specified TLS protocol and cipher suite """
+    """ TLS client on specified parameters """
 
     def __init__(
             self,
@@ -32,10 +32,14 @@ class Client(Peer):
 
         self.context.check_hostname = check_servername
 
-    def connect(self, host, port, msg):
+    def set_app_protocols(self, *app_protocols):
+        self.context.set_alpn_protocols(app_protocols)
+
+    def connect(self, host='localhost', port=443, msg=b'Hello'):
         with self.context.wrap_socket(
                 socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as _c_socket:
             _c_socket.connect((host, port))
+            self.negotiated_app_protocol = _c_socket.selected_alpn_protocol()
             self.log('Connected to server')
 
             _c_socket.sendall(msg)

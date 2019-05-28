@@ -14,7 +14,7 @@ import utils
 
 
 class Server(Peer):
-    """ TLS server on specified protocol, cipher suite and port """
+    """ TLS server on specified parameters """
 
     def __init__(
             self,
@@ -30,23 +30,27 @@ class Server(Peer):
             cert_group,
             cipher_suites,
             check_cert)
-
+        self.port = port
         self.context.check_hostname = False
-
-        self.s_socket = self.context.wrap_socket(
-            socket.socket(
-                socket.AF_INET,
-                socket.SOCK_STREAM),
-            server_side=True)
-        self.s_socket.bind(('127.0.0.1', port))
-        self.s_socket.listen()
-        self.log(f'Listening {self.get_port()}')
 
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
+
+    def set_app_protocols(self, *app_protocols):
+        self.context.set_alpn_protocols(app_protocols)
+
+    def start(self):
+        self.s_socket = self.context.wrap_socket(
+            socket.socket(
+                socket.AF_INET,
+                socket.SOCK_STREAM),
+            server_side=True)
+        self.s_socket.bind(('127.0.0.1', self.port))
+        self.s_socket.listen()
+        self.log(f'Listening {self.get_port()}')
 
     def get_port(self):
         return self.s_socket.getsockname()[1]
@@ -87,6 +91,7 @@ class ServerThread(Thread):
         self.server.close()
 
     def run(self):
+        self.server.start()
         self.server.accept()
 
 
@@ -98,6 +103,7 @@ if __name__ == '__main__':
                 cert_group=CertGroups.ECDSA_GROUP,
                 cipher_suites=(CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA,),
                 port=65443) as _server:
+            _server.start()
             _server.accept()
     except KeyboardInterrupt:
         print('Server exited')

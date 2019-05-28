@@ -60,8 +60,7 @@ def create_context(
         cert_group,
         cipher_suites):
     """
-    Create SSL context with specified protocol and cipher suite.
-    The CA and end entity certificate are automatically determined by the cipher suite.
+    Create SSL context with specified protocols, certificate group and cipher suites.
     """
 
     _context = ssl.SSLContext()
