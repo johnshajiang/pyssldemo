@@ -78,3 +78,8 @@ class CertGroup(object):
 
     def __str__(self):
         return f'CA: {self.ca}\nServer cert: {self.server_cert}\nClient cert:{self.client_cert}'
+
+
+class CertGroups(Enum):
+    RSA_GROUP = CertGroup(Certs.CA_RSA, Certs.SERVER_RSA, Certs.CLIENT_RSA)
+    ECDSA_GROUP = CertGroup(Certs.CA_ECDSA, Certs.SERVER_ECDSA, Certs.CLIENT_ECDSA)
