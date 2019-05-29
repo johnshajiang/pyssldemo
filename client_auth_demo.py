@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-A simple demo on checking client authentication.
+A simple demo on client authentication.
 """
 
 import time

@@ -12,23 +12,30 @@ import utils
 
 class Client(Peer):
 
-    def __init__(self, context=None):
+    def __init__(self, context=None, session=None):
         super(Client, self).__init__(context)
         self.context.verify_mode = ssl.CERT_REQUIRED
+        self.session = session
 
     def set_app_protocols(self, *app_protocols):
         self.context.set_alpn_protocols(app_protocols)
 
     def connect(self, host='localhost', port=443, msg=b'Hello'):
         with self.context.wrap_socket(
-                socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as _c_socket:
-            _c_socket.connect((host, port))
-            self.negotiated_app_protocol = _c_socket.selected_alpn_protocol()
+                socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as _ssl_socket:
+            if self.session is not None:
+                _ssl_socket.session = self.session
+
+            _ssl_socket.connect((host, port))
             self.log('Connected to server')
 
-            _c_socket.sendall(msg)
+            self.session = _ssl_socket.session
+            self.session_reused = _ssl_socket.session_reused
+            self.negotiated_app_protocol = _ssl_socket.selected_alpn_protocol()
+
+            _ssl_socket.sendall(msg)
             self.log('Send request')
-            self.log(f'Response: {_c_socket.recv(1024)}')
+            self.log(f'Response: {_ssl_socket.recv(1024)}')
 
 
 if __name__ == '__main__':

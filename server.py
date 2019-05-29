@@ -33,22 +33,22 @@ class Server(Peer):
         self.context.set_alpn_protocols(app_protocols)
 
     def start(self):
-        self.s_socket = self.context.wrap_socket(
+        self.ssl_socket = self.context.wrap_socket(
             socket.socket(
                 socket.AF_INET,
                 socket.SOCK_STREAM),
             server_side=True)
-        self.s_socket.bind(('127.0.0.1', self.port))
-        self.s_socket.listen()
+        self.ssl_socket.bind(('127.0.0.1', self.port))
+        self.ssl_socket.listen()
         self.log(f'Listening {self.get_port()}')
 
     def get_port(self):
-        return self.s_socket.getsockname()[1]
+        return self.ssl_socket.getsockname()[1]
 
     def accept(self):
         self.log('Accepting connection ...')
         while True:
-            _socket, _addr = self.s_socket.accept()
+            _socket, _addr = self.ssl_socket.accept()
 
             self.log(f'Client address: {_addr}')
             self.log(f'Negotiated protocol: {_socket.version()}')
@@ -65,7 +65,7 @@ class Server(Peer):
                     self.log('Send response')
 
     def close(self):
-        self.s_socket.close()
+        self.ssl_socket.close()
         self.log('Closed')
 
 
