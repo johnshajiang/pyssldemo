@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
         time.sleep(1)  # Wait for server accepting (?)
 
-        _port = _s_thread.server.get_port()
+        _port = _server.get_port()
 
         _client = Client()
         _client.set_app_protocols('http/2')
