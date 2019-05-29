@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-A simple demo on basic connection with authentication on both of server and client.
+A simple demo on basic connection with server authentication.
 """
 
 import time
@@ -22,6 +22,5 @@ if __name__ == '__main__':
         _port = _s_thread.server.get_port()
 
         _client = Client()
-        _client.connect(port=_port, msg=b'Client #1')
-        _client.connect(port=_port, msg=b'Client #2')
+        _client.connect(port=_port)
         _client.connect(port=_port, msg=utils.SERVER_EXIT_FLAG)

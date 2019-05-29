@@ -7,7 +7,8 @@ Utilities
 import os
 import os.path
 import ssl
-from params import Protocols, KeyExAlgos, CipherSuites
+from params import Protocols, CipherSuites
+from certs import CertGroups
 
 
 SERVER_EXIT_FLAG = b'EXIT'
@@ -55,10 +56,12 @@ def get_cert_path(cert_file):
 
 
 def create_context(
-        min_protocol,
-        max_protocol,
-        cert_group,
-        cipher_suites):
+    min_protocol=Protocols.TLSV1_0,
+    max_protocol=Protocols.TLSV1_2,
+    cert_group=CertGroups.ECDSA_GROUP,
+    cipher_suites=(
+        CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
+        CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA)):
     """
     Create SSL context with specified protocols, certificate group and cipher suites.
     """
@@ -75,5 +78,8 @@ def create_context(
         certfile=get_cert_path(
             cert_group.value.server_cert.value.cert_file), keyfile=get_cert_path(
             cert_group.value.server_cert.value.priv_key_file))
+
+    _context.verify_mode = ssl.CERT_NONE
+    _context.check_hostname = False
 
     return _context
