@@ -53,6 +53,6 @@ if __name__ == '__main__':
     try:
         _client = Client()
         _client.connect(_host, _port, b'Hello')
-        _client.connect(_host, _port, utils.SERVER_EXIT_FLAG)
+        _client.signal_close_server(_host, _port)
     except KeyboardInterrupt:
         print('Client exited')
