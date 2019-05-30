@@ -17,6 +17,9 @@ class Server(Peer):
         super(Server, self).__init__(context)
         self.port = port
 
+        self.s_socket = None  # Server-side SSL socket
+        self.c_socket = None  # Client-side SSL socket
+
     def __enter__(self):
         return self
 
@@ -33,39 +36,39 @@ class Server(Peer):
         self.context.set_alpn_protocols(app_protocols)
 
     def start(self):
-        self.ssl_socket = self.context.wrap_socket(
+        self.s_socket = self.context.wrap_socket(
             socket.socket(
                 socket.AF_INET,
                 socket.SOCK_STREAM),
             server_side=True)
-        self.ssl_socket.bind(('127.0.0.1', self.port))
-        self.ssl_socket.listen()
+        self.s_socket.bind(('127.0.0.1', self.port))
+        self.s_socket.listen()
         self.log(f'Listening {self.get_port()}')
 
     def get_port(self):
-        return self.ssl_socket.getsockname()[1]
+        return self.s_socket.getsockname()[1]
 
     def accept(self):
         self.log('Accepting connection ...')
         while True:
-            _socket, _addr = self.ssl_socket.accept()
+            self.c_socket, _addr = self.s_socket.accept()
 
             self.log(f'Client address: {_addr}')
-            self.log(f'Negotiated protocol: {_socket.version()}')
-            self.log(f'Negotiated cipher suite: {_socket.cipher()}')
+            self.log(f'Negotiated protocol: {self.c_socket.version()}')
+            self.log(f'Negotiated cipher suite: {self.c_socket.cipher()}')
 
-            with _socket:
-                request = _socket.recv(1024)
+            with self.c_socket:
+                request = self.c_socket.recv(1024)
                 self.log(f'Request: {request}')
                 if request == utils.SERVER_EXIT_FLAG:
-                    _socket.sendall(b'Exiting ...')
+                    self.c_socket.sendall(b'Exiting ...')
                     break
                 else:
-                    _socket.sendall(b'Client said: ' + request)
+                    self.c_socket.sendall(b'Client said: ' + request)
                     self.log('Send response')
 
     def close(self):
-        self.ssl_socket.close()
+        self.s_socket.close()
         self.log('Closed')
 
 

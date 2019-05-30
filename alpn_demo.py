@@ -32,4 +32,4 @@ if __name__ == '__main__':
         if _client.negotiated_app_protocol != 'http/2':
             raise ValueError(f'Unexpected app protocol: {_client.negotiated_app_protocol}')
 
-        _client.connect(port=_port, msg=utils.SERVER_EXIT_FLAG)
+        _client.signal_close_server(port=_port)

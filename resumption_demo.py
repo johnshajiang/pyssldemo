@@ -26,9 +26,9 @@ if __name__ == '__main__':
 
         _client2 = Client(context=_client1.context, session=_client1.session)
         _client2.connect(port=_port)
-        if not _client2.session_reused:
+        if not _client2.session_resumed:
             raise RuntimeError('Session is not reused')
         else:
             print('Session was reused')
 
-        _client2.connect(port=_port, msg=utils.SERVER_EXIT_FLAG)
+        _client2.signal_close_server(port=_port)

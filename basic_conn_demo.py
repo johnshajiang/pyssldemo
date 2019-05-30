@@ -23,4 +23,4 @@ if __name__ == '__main__':
 
         _client = Client()
         _client.connect(port=_port)
-        _client.connect(port=_port, msg=utils.SERVER_EXIT_FLAG)
+        _client.signal_close_server(port=_port)

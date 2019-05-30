@@ -10,7 +10,7 @@ import utils
 class Peer(object):
     """ TLS peer on specified parameters """
 
-    def __init__(self, context):
+    def __init__(self, context=None):
         if context is None:
             self.context = utils.create_context()
         else:
