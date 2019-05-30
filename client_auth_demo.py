@@ -8,7 +8,6 @@ import time
 import ssl
 from server import Server, ServerThread
 from client import Client
-import utils
 
 
 if __name__ == '__main__':
