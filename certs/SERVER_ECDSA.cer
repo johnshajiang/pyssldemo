@@ -1,9 +1,43 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            7d:0e:3f:80:5b:95:d4:14:03:26:88:fa:22:10:b8:8c:86:d9:02:4a
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN = CA-ECDSA
+        Validity
+            Not Before: Jun  5 02:53:45 2019 GMT
+            Not After : Jun  2 02:53:45 2029 GMT
+        Subject: CN = SERVER-ECDSA
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:0a:07:db:c8:fa:f8:7c:a6:98:2c:1c:1b:35:15:
+                    16:8a:8a:31:9d:d2:d3:b9:da:e3:bf:a8:7c:23:14:
+                    44:cc:ef:14:22:a8:53:55:25:a7:ec:01:6d:83:2c:
+                    28:30:2f:cd:e4:6d:06:00:de:38:c6:c4:28:b5:e3:
+                    3a:23:f7:c5:03
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                58:A9:8A:6A:46:5F:23:50:3B:A5:52:23:C4:6A:F5:DE:E1:F2:93:31
+            X509v3 Authority Key Identifier: 
+                keyid:CC:50:36:F5:96:D1:7A:CF:05:BB:E2:7C:5F:59:EB:46:2A:AD:76:B5
+
+    Signature Algorithm: ecdsa-with-SHA256
+         30:45:02:21:00:cf:bd:90:2c:75:da:bf:5e:3e:6b:4f:36:1b:
+         1e:0f:56:4e:c0:68:f5:7d:74:24:a6:64:ea:10:66:7b:c4:b2:
+         8e:02:20:62:e7:77:aa:b2:cd:40:54:f0:54:5f:9d:43:e3:f8:
+         69:a9:fd:28:9c:aa:a9:58:f6:2e:c4:ab:3b:b7:05:f2:86
 -----BEGIN CERTIFICATE-----
-MIIBJDCBywIUPi7SHH/7zuIBLZpkdcQsfj35ojEwCgYIKoZIzj0EAwIwEzERMA8G
-A1UEAwwIQ0EtRUNEU0EwHhcNMTkwNTIyMDU1MTE4WhcNMjkwNTE5MDU1MTE4WjAX
-MRUwEwYDVQQDDAxTRVJWRVItRUNEU0EwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNC
-AARsPqGkJdFL2ChTcOxY+ayb26BccR2q8sZwUr3SnBtBFHsH0CkkQFw4BdZFTIVy
-fhFYdr5JOWAzhsvS9nlnNlY9MAoGCCqGSM49BAMCA0gAMEUCIQC1qROtWReP0pL+
-J6lN0J8iBp+fv6e64o+zQxDv/Ay2ywIgGPwd9xwtf+hqc2K0av6JsMaWzi6NqLxq
-TGxUw05Afas=
+MIIBbjCCARSgAwIBAgIUfQ4/gFuV1BQDJoj6IhC4jIbZAkowCgYIKoZIzj0EAwIw
+EzERMA8GA1UEAwwIQ0EtRUNEU0EwHhcNMTkwNjA1MDI1MzQ1WhcNMjkwNjAyMDI1
+MzQ1WjAXMRUwEwYDVQQDDAxTRVJWRVItRUNEU0EwWTATBgcqhkjOPQIBBggqhkjO
+PQMBBwNCAAQKB9vI+vh8ppgsHBs1FRaKijGd0tO52uO/qHwjFETM7xQiqFNVJafs
+AW2DLCgwL83kbQYA3jjGxCi14zoj98UDo0IwQDAdBgNVHQ4EFgQUWKmKakZfI1A7
+pVIjxGr13uHykzEwHwYDVR0jBBgwFoAUzFA29ZbRes8Fu+J8X1nrRiqtdrUwCgYI
+KoZIzj0EAwIDSAAwRQIhAM+9kCx12r9ePmtPNhseD1ZOwGj1fXQkpmTqEGZ7xLKO
+AiBi53eqss1AVPBUX51D4/hpqf0onKqpWPYuxKs7twXyhg==
 -----END CERTIFICATE-----
