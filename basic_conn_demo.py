@@ -20,6 +20,7 @@ if __name__ == '__main__':
 
         _port = _s_thread.server.get_port()
 
-        _client = Client()
-        _client.connect(port=_port)
-        _client.signal_close_server(port=_port)
+        with Client() as _client:
+            _client.connect(port=_port)
+
+        Client.signal_close_server(context=_client.context, port=_port)

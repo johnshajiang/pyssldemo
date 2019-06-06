@@ -20,14 +20,15 @@ if __name__ == '__main__':
 
         _port = _s_thread.server.get_port()
 
-        _client1 = Client()
-        _client1.connect(port=_port)
+        with Client() as _client1:
+            _client1.connect(port=_port)
+            _session = _client1.get_session()
 
-        _client2 = Client(context=_client1.context, session=_client1.session)
-        _client2.connect(port=_port)
-        if not _client2.session_resumed:
-            raise RuntimeError('Session is not reused')
-        else:
-            print('Session was reused')
+        with Client(context=_client1.context, session=_session) as _client2:
+            _client2.connect(port=_port)
+            if not _client2.is_session_resumed():
+                raise RuntimeWarning('Session is not resumed')
+            else:
+                print('Session was resumed')
 
-        _client2.signal_close_server(port=_port)
+        Client.signal_close_server(context=_client1.context, port=_port)

@@ -13,12 +13,12 @@ import utils
 
 class Server(Peer):
 
-    def __init__( self, context=None, port=0):
+    def __init__(self, context=None, port=0):
         super(Server, self).__init__(context)
         self.port = port
 
         self.s_socket = None  # Server-side SSL socket
-        self.c_socket = None  # Client-side SSL socket
+        self.c_socket = None  # Accepted SSL socket
 
     def __enter__(self):
         return self
@@ -26,14 +26,20 @@ class Server(Peer):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
-    def set_client_auth(self, client_auth):
-        if client_auth:
-            self.context.verify_mode = ssl.CERT_REQUIRED
-        else:
-            self.context.verify_mode = ssl.CERT_NONE
+    def get_session(self):
+        return self.s_socket.session
+
+    def is_session_resumed(self):
+        return self.s_socket.session_reused
+
+    def get_server_name(self):
+        raise RuntimeError('Not implemented yet')
 
     def set_app_protocols(self, *app_protocols):
         self.context.set_alpn_protocols(app_protocols)
+
+    def get_app_protocol(self):
+        return self.s_socket.selected_alpn_protocol()
 
     def start(self):
         self.s_socket = self.context.wrap_socket(
@@ -70,6 +76,9 @@ class Server(Peer):
     def close(self):
         self.s_socket.close()
         self.log('Closed')
+
+    def get_log_path(self):
+        return 'server.log'
 
 
 class ServerThread(Thread):

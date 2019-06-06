@@ -24,12 +24,12 @@ if __name__ == '__main__':
 
         _port = _server.get_port()
 
-        _client = Client()
-        _client.set_app_protocols('http/2')
+        with Client() as _client:
+            _client.set_app_protocols('http/2')
+            _client.connect(port=_port)
+            _negotiated_app_protocol = _client.get_app_protocol()
 
-        _client.connect(port=_port)
+            if _negotiated_app_protocol != 'http/2':
+                raise RuntimeWarning(f'Unexpected app protocol: {_client.get_app_protocol()}')
 
-        if _client.negotiated_app_protocol != 'http/2':
-            raise ValueError(f'Unexpected app protocol: {_client.negotiated_app_protocol}')
-
-        _client.signal_close_server(port=_port)
+        Client.signal_close_server(context=_client.context, port=_port)
