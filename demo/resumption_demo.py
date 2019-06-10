@@ -6,8 +6,8 @@ A simple demo on session resumption.
 
 import time
 import ssl
-from server import Server, ServerThread
-from client import Client
+from pyssldemo.server import Server, ServerThread
+from pyssldemo.client import Client
 
 
 if __name__ == '__main__':
@@ -26,6 +26,7 @@ if __name__ == '__main__':
 
         with Client(context=_client1.context, session=_session) as _client2:
             _client2.connect(port=_port)
+
             if not _client2.is_session_resumed():
                 raise RuntimeWarning('Session is not resumed')
             else:

@@ -7,7 +7,7 @@ TLS peer
 from abc import ABCMeta, abstractmethod
 import os
 import ssl
-import utils
+from pyssldemo import utils
 
 
 class Peer(metaclass=ABCMeta):

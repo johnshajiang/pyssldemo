@@ -6,8 +6,8 @@ TLS client
 
 import socket
 import ssl
-from peer import Peer
-import utils
+from pyssldemo.peer import Peer
+from pyssldemo import utils
 
 
 class Client(Peer):
@@ -44,9 +44,8 @@ class Client(Peer):
             socket.socket(socket.AF_INET, socket.SOCK_STREAM))
 
         if self.session is not None:
-            print(self.session)
             self.c_socket.session = self.session
-
+        self.c_socket.server_hostname = 'localhost'
         self.c_socket.connect((host, port))
         self.log('Connected to server')
 

@@ -7,8 +7,8 @@ TLS server
 from threading import Thread
 import socket
 import ssl
-from peer import Peer
-import utils
+from pyssldemo.peer import Peer
+from pyssldemo import utils
 
 
 class Server(Peer):

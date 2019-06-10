@@ -6,8 +6,8 @@ A simple demo on basic connection with server authentication.
 
 import time
 import ssl
-from server import Server, ServerThread
-from client import Client
+from pyssldemo.server import Server, ServerThread
+from pyssldemo.client import Client
 
 
 if __name__ == '__main__':

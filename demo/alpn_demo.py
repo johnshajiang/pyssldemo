@@ -6,9 +6,8 @@ A simple demo on checking ALPN.
 
 import time
 import ssl
-from server import Server, ServerThread
-from client import Client
-import utils
+from pyssldemo.server import Server, ServerThread
+from pyssldemo.client import Client
 
 
 if __name__ == '__main__':

@@ -7,8 +7,8 @@ Utilities
 import os
 import os.path
 import ssl
-from params import Protocols, CipherSuites
-from certs import CertGroups
+from pyssldemo.params import Protocols, CipherSuites
+from pyssldemo.certs import CertGroups
 
 
 SERVER_EXIT_FLAG = b'EXIT'
@@ -48,7 +48,7 @@ def openssl_cs(cipher_suites):
     return ':'.join(_cipher_suites)
 
 
-CERT_DIR = os.getenv('PYSSLDEMO.CERT.DIR')
+CERT_DIR = os.getenv('PYSSLDEMO_CERT_DIR')
 
 
 def get_cert_path(cert_file):
