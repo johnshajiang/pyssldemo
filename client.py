@@ -17,6 +17,7 @@ class Client(Peer):
         self.set_peer_auth(server_auth)
         self.session = session
         self.c_socket = None  # Client-side SSL socket
+        self.server_name = None  # Indicated server hostname
 
     def __enter__(self):
         return self
@@ -30,9 +31,6 @@ class Client(Peer):
     def is_session_resumed(self):
         return self.c_socket.session_reused
 
-    def get_server_name(self):
-        raise RuntimeError('Not implemented yet')
-
     def set_app_protocols(self, *app_protocols):
         self.context.set_alpn_protocols(app_protocols)
 
@@ -45,7 +43,10 @@ class Client(Peer):
 
         if self.session is not None:
             self.c_socket.session = self.session
-        self.c_socket.server_hostname = 'localhost'
+
+        if self.server_name is not None:
+            self.c_socket.server_hostname = self.server_name
+
         self.c_socket.connect((host, port))
         self.log('Connected to server')
 

@@ -15,10 +15,12 @@ class Server(Peer):
 
     def __init__(self, context=None, port=0):
         super(Server, self).__init__(context)
+        self.context.sni_callback = self.sni_callback
         self.port = port
 
         self.s_socket = None  # Server-side SSL socket
         self.c_socket = None  # Accepted SSL socket
+        self.server_name = None  # Selected SNI server name
 
     def __enter__(self):
         return self
@@ -26,14 +28,20 @@ class Server(Peer):
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.close()
 
+    def sni_callback(self, socket, server_name, context):
+        """
+        It just records the indicated server name,
+        but DOESN'T verify the certificate chain on this server name.
+        """
+
+        self.log(f'Indicated server name: {server_name}')
+        self.server_name = server_name
+
     def get_session(self):
         return self.s_socket.session
 
     def is_session_resumed(self):
         return self.s_socket.session_reused
-
-    def get_server_name(self):
-        raise RuntimeError('Not implemented yet')
 
     def set_app_protocols(self, *app_protocols):
         self.context.set_alpn_protocols(app_protocols)

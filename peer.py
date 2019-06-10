@@ -37,10 +37,6 @@ class Peer(metaclass=ABCMeta):
             self.context.verify_mode = ssl.CERT_NONE
 
     @staticmethod
-    def get_server_name(self):
-        """ Return the selected server name """
-
-    @staticmethod
     def set_app_protocols(self, *app_protocols):
         """ Set the supported application protocols """
 
