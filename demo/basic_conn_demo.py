@@ -4,7 +4,6 @@
 A simple demo on basic connection with server authentication.
 """
 
-import time
 import ssl
 from pyssldemo.server import Server, ServerThread
 from pyssldemo.client import Client
@@ -15,8 +14,6 @@ if __name__ == '__main__':
 
     with ServerThread(Server()) as _s_thread:
         _s_thread.start()
-
-        time.sleep(1)  # Wait for server accepting (?)
 
         _port = _s_thread.server.get_port()
 

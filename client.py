@@ -38,6 +38,7 @@ class Client(Peer):
         return self.c_socket.selected_alpn_protocol()
 
     def connect(self, host='localhost', port=443, msg=b'Hello'):
+        self.log(f'Connecting to {host}:{port}')
         self.c_socket = self.context.wrap_socket(
             socket.socket(socket.AF_INET, socket.SOCK_STREAM))
 

@@ -4,7 +4,6 @@
 A simple demo on checking ALPN.
 """
 
-import time
 import ssl
 from pyssldemo.server import Server, ServerThread
 from pyssldemo.client import Client
@@ -18,8 +17,6 @@ if __name__ == '__main__':
 
     with ServerThread(_server) as _s_thread:
         _s_thread.start()
-
-        time.sleep(1)  # Wait for server accepting (?)
 
         _port = _server.get_port()
 

@@ -4,7 +4,9 @@
 TLS server
 """
 
+import time
 from threading import Thread
+import os
 import socket
 import ssl
 from pyssldemo.peer import Peer
@@ -57,10 +59,14 @@ class Server(Peer):
             server_side=True)
         self.s_socket.bind(('127.0.0.1', self.port))
         self.s_socket.listen()
-        self.log(f'Listening {self.get_port()}')
 
-    def get_port(self):
-        return self.s_socket.getsockname()[1]
+        real_port = self.s_socket.getsockname()[1]
+        self.log(f'Listening {real_port}')
+
+        _port_log = self.get_port_log_path()
+        with open(_port_log, 'w') as f:
+            f.write(f'{real_port}')
+            self.log(f'Generated port log: {os.path.abspath(_port_log)}')
 
     def accept(self):
         self.log('Accepting connection ...')
@@ -83,10 +89,35 @@ class Server(Peer):
 
     def close(self):
         self.s_socket.close()
+
+        _port_log = self.get_port_log_path()
+        if os.path.isfile(_port_log):
+            os.remove(_port_log)
+            self.log(f'Removed port log: {os.path.abspath(_port_log)}')
+
         self.log('Closed')
 
     def get_log_path(self):
         return 'server.log'
+
+    def get_port_log_path(self):
+        return 'port.log'
+
+    def get_port(self):
+        """
+        Read port from the local port log file.
+        If the file is unavailable, the caller would be blocked.
+        """
+
+        _port_log = self.get_port_log_path()
+
+        # Wait for port is ready
+        while not os.path.isfile(_port_log):
+            self.log('Waiting for port ...')
+            time.sleep(1)
+
+        with open(_port_log, 'r') as f:
+            return int(f.readline())
 
 
 class ServerThread(Thread):
