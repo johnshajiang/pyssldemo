@@ -23,6 +23,8 @@ def tls_version(protocol):
         return ssl.TLSVersion.TLSv1_1
     elif protocol == Protocols.TLSV1_2:
         return ssl.TLSVersion.TLSv1_2
+    elif protocol == Protocols.TLSV1_3:
+        return ssl.TLSVersion.TLSv1_3
     else:
         return None
 
@@ -56,10 +58,12 @@ def get_cert_path(cert_file):
 
 
 def create_context(
-    min_protocol=Protocols.TLSV1_0,
-    max_protocol=Protocols.TLSV1_2,
+    min_protocol=Protocols.TLSV1_2,
+    max_protocol=Protocols.TLSV1_3,
     cert_group=CertGroups.ECDSA_GROUP,
     cipher_suites=(
+        CipherSuites.TLS_AES_128_GCM_SHA256,
+        CipherSuites.TLS_AES_256_GCM_SHA384,
         CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
         CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA)):
     """
