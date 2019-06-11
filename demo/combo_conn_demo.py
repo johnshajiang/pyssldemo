@@ -11,6 +11,23 @@ from pyssldemo.client import Client
 from pyssldemo import utils
 
 
+def run_case(protocol, cipher_suite):
+    print('========== Case start ==========')
+    print(f'Protocol: {protocol}\nCipher suite: {cipher_suite}')
+    with ServerThread(Server()) as _s_thread:
+        _s_thread.start()
+
+        _port = _s_thread.server.get_port()
+
+        _context = utils.create_context(min_protocol=protocol,
+                                        max_protocol=protocol,
+                                        cipher_suites=(cipher_suite,))
+        with Client(context=_context) as _client:
+            _client.connect(port=_port)
+
+        Client.signal_close_server(context=_client.context, port=_port)
+
+
 if __name__ == '__main__':
     print(ssl.OPENSSL_VERSION)
 
@@ -24,18 +41,4 @@ if __name__ == '__main__':
             if not _cipher_suite.supportedBy(_protocol):
                 continue
 
-            print('========== Case start ==========')
-            print(f'Protocol: {_protocol}\nCipher suite: {_cipher_suite}')
-
-            with ServerThread(Server()) as _s_thread:
-                _s_thread.start()
-
-                _port = _s_thread.server.get_port()
-
-                _context = utils.create_context(min_protocol=_protocol,
-                                                max_protocol=_protocol,
-                                                cipher_suites=(_cipher_suite,))
-                with Client(context=_context) as _client:
-                    _client.connect(port=_port)
-
-                Client.signal_close_server(context=_client.context, port=_port)
+            run_case(_protocol, _cipher_suite)
