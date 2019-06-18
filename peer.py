@@ -8,6 +8,7 @@ from abc import ABCMeta, abstractmethod
 import os
 import ssl
 from pyssldemo import utils
+from pyssldemo.ssl_logger import SSLLogger
 
 
 class Peer(metaclass=ABCMeta):
@@ -19,6 +20,8 @@ class Peer(metaclass=ABCMeta):
             self.context = utils.create_context()
         else:
             self.context = context
+
+        self.logger = SSLLogger(type(self).__name__)
 
     @staticmethod
     def get_session(self):
@@ -48,29 +51,5 @@ class Peer(metaclass=ABCMeta):
     def close(self):
         """ Close the peer """
 
-    @abstractmethod
-    def get_log_path(self):
-        """ Specify the local log file path  """
-
-    def print_log(self):
-        """ Print the local log file content """
-
-        _log_path = self.get_log_path()
-        if os.path.isfile(_log_path):
-            with open(_log_path, 'r') as _file:
-                for _line in _file.readlines():
-                    print(_line)
-        else:
-            print(f'Not found log file: {_log_path}')
-
-    def delete_log(self):
-        """ Delete the local log file """
-
-        _log_path = self.get_log_path()
-        if os.path.isfile(_log_path):
-            os.remove(_log_path)
-        else:
-            print(f'Not found log file: {_log_path}')
-
     def log(self, msg):
-        print(f'[{type(self).__name__}] {msg}')
+        self.logger.log(f'[{type(self).__name__}] {msg}')
