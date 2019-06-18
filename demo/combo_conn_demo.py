@@ -38,7 +38,7 @@ if __name__ == '__main__':
                               CipherSuites.TLS_AES_128_GCM_SHA256):
 
             # If the cipher suite is not supported by the TLS protocol, the case just be ignored.
-            if not _cipher_suite.supportedBy(_protocol):
+            if not _cipher_suite.supported_by(_protocol):
                 continue
 
             run_case(_protocol, _cipher_suite)

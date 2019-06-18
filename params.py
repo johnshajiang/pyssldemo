@@ -141,3 +141,6 @@ class CipherSuites(Enum):
         'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384',
         KeyExAlgos.ECDHE_RSA,
         Protocols.TLSV1_2)
+
+    def supported_by(self, protocol):
+        return protocol in self.value.protocols
