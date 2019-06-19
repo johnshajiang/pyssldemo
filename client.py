@@ -66,9 +66,9 @@ class Client(Peer):
     def signal_close_server(context, host='localhost', port=443):
         """ Connect to server and inform it to close """
 
-        _client = Client(context, None, False)
-        _client.log('Signal server to close ...')
-        _client.connect(host, port, msg=utils.SERVER_EXIT_FLAG)
+        with Client(context, None, False) as _client:
+            _client.log('Signal server to close ...')
+            _client.connect(host, port, msg=utils.SERVER_EXIT_FLAG)
 
 
 if __name__ == '__main__':
