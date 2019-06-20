@@ -87,3 +87,11 @@ def create_context(
     _context.check_hostname = False
 
     return _context
+
+
+def func_separator(func):
+    def wrapper(*args, **kwargs):
+        print(f'========== {func.__name__} start ==========')
+        func(*args, **kwargs)
+        print(f'========== {func.__name__} end ==========')
+    return wrapper

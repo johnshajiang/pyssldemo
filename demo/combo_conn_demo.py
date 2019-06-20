@@ -11,8 +11,8 @@ from pyssldemo.client import Client
 from pyssldemo import utils
 
 
+@utils.func_separator
 def run_case(protocol, cipher_suite):
-    print('========== Case start ==========')
     print(f'Protocol: {protocol}\nCipher suite: {cipher_suite}')
     with ServerThread(Server()) as _s_thread:
         _s_thread.start()
