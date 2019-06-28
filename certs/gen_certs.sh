@@ -64,4 +64,19 @@ openssl req -new -key CLIENT_ECDSA_SECP521R1.key -subj "/CN=CLIENT-ECDSA-SECP521
 openssl x509 -extfile v3.ext -req -CAcreateserial -days 3650 -in CLIENT_ECDSA_SECP521R1.csr -sha256 -CA CA_ECDSA_SECP521R1.cer -CAkey CA_ECDSA_SECP521R1.key -out CLIENT_ECDSA_SECP521R1.cer.tmp
 openssl x509 -text -in CLIENT_ECDSA_SECP521R1.cer.tmp > CLIENT_ECDSA_SECP521R1.cer
 
+# Generate RSASSA-PSS CA, server and client end entity certificates
+openssl genpkey -algorithm rsa-pss -pkeyopt rsa_keygen_bits:2048 -pkeyopt rsa_keygen_pubexp:65537 -out CA_PSS.key
+openssl req -x509 -new -key CA_PSS.key -days 3650 -subj "/CN=CA-PSS" -sha256 -out CA_PSS.cer.tmp
+openssl x509 -text -in CA_PSS.cer.tmp > CA_PSS.cer
+
+openssl genpkey -algorithm rsa-pss -pkeyopt rsa_keygen_bits:2048 -pkeyopt rsa_keygen_pubexp:65537 -out SERVER_PSS.key
+openssl req -new -key SERVER_PSS.key -subj "/CN=SERVER-PSS" -sha256 -out SERVER_PSS.csr
+openssl x509 -extfile v3.ext -req -CAcreateserial -days 3650 -in SERVER_PSS.csr -sha256 -CA CA_PSS.cer -CAkey CA_PSS.key -out SERVER_PSS.cer.tmp
+openssl x509 -text -in SERVER_PSS.cer.tmp > SERVER_PSS.cer
+
+openssl genpkey -algorithm rsa-pss -pkeyopt rsa_keygen_bits:2048 -pkeyopt rsa_keygen_pubexp:65537 -out CLIENT_PSS.key
+openssl req -new -key CLIENT_PSS.key -subj "/CN=CLIENT-PSS" -sha256 -out CLIENT_PSS.csr
+openssl x509 -extfile v3.ext -req -CAcreateserial -days 3650 -in CLIENT_PSS.csr -sha256 -CA CA_PSS.cer -CAkey CA_PSS.key -out CLIENT_PSS.cer.tmp
+openssl x509 -text -in CLIENT_PSS.cer.tmp > CLIENT_PSS.cer
+
 rm v3.ext *.srl *.csr *.tmp
