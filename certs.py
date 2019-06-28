@@ -36,38 +36,89 @@ class Cert(object):
 
 @unique
 class Certs(Enum):
-    CA_ECDSA = Cert(KeyAlgos.EC,
-                    SigAlgos.ECDSA,
-                    HashAlgos.SHA256,
-                    'CA_ECDSA.cer',
-                    'CA_ECDSA.key')
-    CA_RSA = Cert(KeyAlgos.RSA,
-                  SigAlgos.RSA,
-                  HashAlgos.SHA256,
-                  'CA_RSA.cer',
-                  'CA_RSA.key')
+    CA_ECDSA_SECP256R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'CA_ECDSA_SECP256R1.cer',
+        'CA_ECDSA_SECP256R1.key')
 
-    SERVER_ECDSA = Cert(KeyAlgos.EC,
-                        SigAlgos.ECDSA,
-                        HashAlgos.SHA256,
-                        'SERVER_ECDSA.cer',
-                        'SERVER_ECDSA.key')
-    SERVER_RSA = Cert(KeyAlgos.RSA,
-                      SigAlgos.RSA,
-                      HashAlgos.SHA256,
-                      'SERVER_RSA.cer',
-                      'SERVER_RSA.key')
+    CA_ECDSA_SECP384R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'CA_ECDSA_SECP384R1.cer',
+        'CA_ECDSA_SECP384R1.key')
 
-    CLIENT_ECDSA = Cert(KeyAlgos.EC,
-                        SigAlgos.ECDSA,
-                        HashAlgos.SHA256,
-                        'CLIENT_ECDSA.cer',
-                        'CLIENT_ECDSA.key')
-    CLIENT_RSA = Cert(KeyAlgos.RSA,
-                      SigAlgos.RSA,
-                      HashAlgos.SHA256,
-                      'CLIENT_RSA.cer',
-                      'CLIENT_RSA.key')
+    CA_ECDSA_SECP521R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'CA_ECDSA_SECP521R1.cer',
+        'CA_ECDSA_SECP521R1.key')
+
+    CA_RSA = Cert(
+        KeyAlgos.RSA,
+        SigAlgos.RSA,
+        HashAlgos.SHA256,
+        'CA_RSA.cer',
+        'CA_RSA.key')
+
+    SERVER_ECDSA_SECP256R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'SERVER_ECDSA_SECP256R1.cer',
+        'SERVER_ECDSA_SECP256R1.key')
+
+    SERVER_ECDSA_SECP384R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'SERVER_ECDSA_SECP384R1.cer',
+        'SERVER_ECDSA_SECP384R1.key')
+
+    SERVER_ECDSA_SECP521R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'SERVER_ECDSA_SECP521R1.cer',
+        'SERVER_ECDSA_SECP521R1.key')
+
+    SERVER_RSA = Cert(
+        KeyAlgos.RSA,
+        SigAlgos.RSA,
+        HashAlgos.SHA256,
+        'SERVER_RSA.cer',
+        'SERVER_RSA.key')
+
+    CLIENT_ECDSA_SECP256R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'CLIENT_ECDSA_SECP256R1.cer',
+        'CLIENT_ECDSA_SECP256R1.key')
+
+    CLIENT_ECDSA_SECP384R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'CLIENT_ECDSA_SECP384R1.cer',
+        'CLIENT_ECDSA_SECP384R1.key')
+
+    CLIENT_ECDSA_SECP521R1 = Cert(
+        KeyAlgos.EC,
+        SigAlgos.ECDSA,
+        HashAlgos.SHA256,
+        'CLIENT_ECDSA_SECP521R1.cer',
+        'CLIENT_ECDSA_SECP521R1.key')
+
+    CLIENT_RSA = Cert(
+        KeyAlgos.RSA,
+        SigAlgos.RSA,
+        HashAlgos.SHA256,
+        'CLIENT_RSA.cer',
+        'CLIENT_RSA.key')
 
 
 class CertGroup(object):
@@ -81,5 +132,12 @@ class CertGroup(object):
 
 
 class CertGroups(Enum):
-    RSA_GROUP = CertGroup(Certs.CA_RSA, Certs.SERVER_RSA, Certs.CLIENT_RSA)
-    ECDSA_GROUP = CertGroup(Certs.CA_ECDSA, Certs.SERVER_ECDSA, Certs.CLIENT_ECDSA)
+    RSA_GROUP = CertGroup(
+        Certs.CA_RSA,
+        Certs.SERVER_RSA,
+        Certs.CLIENT_RSA)
+
+    ECDSA_GROUP = CertGroup(
+        Certs.CA_ECDSA_SECP256R1,
+        Certs.SERVER_ECDSA_SECP256R1,
+        Certs.CLIENT_ECDSA_SECP256R1)

@@ -1,0 +1,44 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            20:9a:85:b9:d8:a9:80:5a:8b:43:db:f1:cb:4f:40:ea:8a:a1:84:91
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN = CA-ECDSA-SECP256R1
+        Validity
+            Not Before: Jun 28 02:54:28 2019 GMT
+            Not After : Jun 25 02:54:28 2029 GMT
+        Subject: CN = SERVER-ECDSA-SECP256R1
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (256 bit)
+                pub:
+                    04:a0:c9:17:63:14:e4:26:1c:63:21:fc:1a:22:02:
+                    ec:08:b7:d4:f0:15:f6:3c:b7:d5:3c:06:18:0b:f7:
+                    6c:fc:5f:6b:52:ef:17:8f:2f:4f:ed:7a:b5:75:76:
+                    4f:02:db:21:a1:27:a1:e1:20:66:74:bb:6b:b7:2e:
+                    d2:97:0c:1d:ad
+                ASN1 OID: prime256v1
+                NIST CURVE: P-256
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                1A:D2:0E:7D:D4:93:41:A3:B3:0D:CB:25:72:D3:59:90:78:DC:49:BC
+            X509v3 Authority Key Identifier: 
+                keyid:2C:1B:F6:89:59:08:79:CF:32:F2:DD:EC:2D:BD:DE:96:03:C9:E3:82
+
+    Signature Algorithm: ecdsa-with-SHA256
+         30:45:02:21:00:ea:4b:49:d5:13:40:ca:fe:9c:bc:38:8e:5e:
+         73:8d:9b:d6:c4:5d:25:a6:f8:d8:96:e9:b1:2e:e2:7d:2d:14:
+         ef:02:20:4e:76:58:0b:41:e5:0e:ec:fa:d9:84:f1:e0:59:49:
+         31:3c:ad:f0:bc:91:33:d6:75:d0:e1:e2:64:0e:4e:de:4e
+-----BEGIN CERTIFICATE-----
+MIIBgjCCASigAwIBAgIUIJqFudipgFqLQ9vxy09A6oqhhJEwCgYIKoZIzj0EAwIw
+HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDI1NlIxMB4XDTE5MDYyODAyNTQyOFoX
+DTI5MDYyNTAyNTQyOFowITEfMB0GA1UEAwwWU0VSVkVSLUVDRFNBLVNFQ1AyNTZS
+MTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKDJF2MU5CYcYyH8GiIC7Ai31PAV
+9jy31TwGGAv3bPxfa1LvF48vT+16tXV2TwLbIaEnoeEgZnS7a7cu0pcMHa2jQjBA
+MB0GA1UdDgQWBBQa0g591JNBo7MNyyVy01mQeNxJvDAfBgNVHSMEGDAWgBQsG/aJ
+WQh5zzLy3ewtvd6WA8njgjAKBggqhkjOPQQDAgNIADBFAiEA6ktJ1RNAyv6cvDiO
+XnONm9bEXSWm+NiW6bEu4n0tFO8CIE52WAtB5Q7s+tmE8eBZSTE8rfC8kTPWddDh
+4mQOTt5O
+-----END CERTIFICATE-----

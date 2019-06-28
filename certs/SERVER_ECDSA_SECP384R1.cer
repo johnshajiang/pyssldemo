@@ -1,0 +1,49 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            0b:0c:9c:a3:3c:11:76:f0:2f:ab:5d:e7:b7:c1:97:ae:bd:04:39:13
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN = CA-ECDSA-SECP384R1
+        Validity
+            Not Before: Jun 28 02:54:28 2019 GMT
+            Not After : Jun 25 02:54:28 2029 GMT
+        Subject: CN = SERVER-ECDSA-SECP384R1
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (384 bit)
+                pub:
+                    04:d9:fd:67:66:0a:08:5e:d6:2d:7b:b2:92:cf:72:
+                    1e:6b:7f:9b:23:21:12:2b:0a:d2:2e:38:8d:cc:8e:
+                    71:39:f6:3c:38:5a:e6:8a:71:1e:ff:8b:c7:b1:ca:
+                    7c:7b:82:51:dd:9e:b6:2e:c0:54:93:7b:a5:5b:38:
+                    a8:a4:95:7c:84:88:bd:6c:29:6f:08:df:0d:74:e0:
+                    d9:0b:23:ed:c6:e7:68:4e:8d:98:c5:00:dc:2f:8f:
+                    1b:0a:e1:cc:02:2e:8e
+                ASN1 OID: secp384r1
+                NIST CURVE: P-384
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                5C:27:1D:80:AC:02:79:4C:E3:0F:DB:62:35:95:C4:97:5A:0D:0C:02
+            X509v3 Authority Key Identifier: 
+                keyid:3C:0C:58:BD:97:17:25:ED:BB:79:EE:D2:46:4B:42:CE:67:BD:1B:77
+
+    Signature Algorithm: ecdsa-with-SHA256
+         30:65:02:31:00:bb:11:fe:e8:5c:6f:9e:23:ce:82:3c:94:da:
+         b7:6e:2f:42:22:63:b3:06:cb:5d:02:a0:03:85:74:b5:42:ae:
+         f0:ea:ab:98:70:93:a4:2c:e2:c1:a9:bf:23:56:53:5b:7e:02:
+         30:4e:88:9c:95:41:d8:84:d8:fb:9e:a1:0d:6c:9a:35:a9:06:
+         dc:01:d7:00:95:e2:9f:77:f2:27:bf:1e:64:c1:0e:dc:da:e7:
+         bf:41:56:ee:97:9c:85:5d:7d:c6:6d:9b:83
+-----BEGIN CERTIFICATE-----
+MIIBvzCCAUWgAwIBAgIUCwycozwRdvAvq13nt8GXrr0EORMwCgYIKoZIzj0EAwIw
+HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDM4NFIxMB4XDTE5MDYyODAyNTQyOFoX
+DTI5MDYyNTAyNTQyOFowITEfMB0GA1UEAwwWU0VSVkVSLUVDRFNBLVNFQ1AzODRS
+MTB2MBAGByqGSM49AgEGBSuBBAAiA2IABNn9Z2YKCF7WLXuyks9yHmt/myMhEisK
+0i44jcyOcTn2PDha5opxHv+Lx7HKfHuCUd2eti7AVJN7pVs4qKSVfISIvWwpbwjf
+DXTg2Qsj7cbnaE6NmMUA3C+PGwrhzAIujqNCMEAwHQYDVR0OBBYEFFwnHYCsAnlM
+4w/bYjWVxJdaDQwCMB8GA1UdIwQYMBaAFDwMWL2XFyXtu3nu0kZLQs5nvRt3MAoG
+CCqGSM49BAMCA2gAMGUCMQC7Ef7oXG+eI86CPJTat24vQiJjswbLXQKgA4V0tUKu
+8OqrmHCTpCziwam/I1ZTW34CME6InJVB2ITY+56hDWyaNakG3AHXAJXin3fyJ78e
+ZMEO3Nrnv0FW7pechV19xm2bgw==
+-----END CERTIFICATE-----

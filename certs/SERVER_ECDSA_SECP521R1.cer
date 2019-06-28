@@ -1,0 +1,54 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            4a:19:70:dc:64:ca:67:6f:93:87:c0:81:16:54:02:5d:d1:ba:fd:ed
+        Signature Algorithm: ecdsa-with-SHA256
+        Issuer: CN = CA-ECDSA-SECP521R1
+        Validity
+            Not Before: Jun 28 02:54:28 2019 GMT
+            Not After : Jun 25 02:54:28 2029 GMT
+        Subject: CN = SERVER-ECDSA-SECP521R1
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: (521 bit)
+                pub:
+                    04:00:f3:7f:46:bb:70:a4:bb:ca:87:0e:40:42:88:
+                    4c:05:ec:bb:7c:30:10:7d:ac:ee:75:98:49:3c:f0:
+                    96:df:07:9d:b8:e3:5f:c7:33:4a:bf:1c:98:6b:2c:
+                    9a:cc:d8:bf:29:b0:12:93:f8:99:63:9c:6b:21:ef:
+                    07:8a:5f:b1:67:84:bc:00:a9:18:c1:5e:e8:73:e4:
+                    44:59:c9:72:66:3c:45:68:17:5e:77:ea:f8:58:ad:
+                    93:28:3b:5e:ea:5e:a7:bc:34:cc:9e:2b:bb:e5:99:
+                    67:5f:67:ed:91:3c:ff:7f:a7:3a:55:05:c8:0b:c8:
+                    8d:10:a1:96:7f:b2:e4:f3:d2:91:73:2b:f9
+                ASN1 OID: secp521r1
+                NIST CURVE: P-521
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                53:55:BF:5A:17:97:24:2B:4A:04:1A:72:CA:E4:44:35:E4:72:D9:AE
+            X509v3 Authority Key Identifier: 
+                keyid:EB:29:EA:01:AB:8C:1E:BF:E6:9F:46:E1:52:C0:AC:91:3A:31:51:33
+
+    Signature Algorithm: ecdsa-with-SHA256
+         30:81:88:02:42:00:d5:0b:6b:14:32:c7:91:f5:1a:5e:c6:d6:
+         de:31:32:96:f5:f2:8c:91:59:50:9d:b3:7e:fa:1e:00:50:6c:
+         22:a1:1d:0d:21:24:53:18:b3:6e:ae:8b:61:e0:41:b0:fb:df:
+         7c:7f:cf:d5:26:13:29:c1:40:09:6f:a4:65:f7:3c:31:eb:02:
+         42:01:40:d4:e4:3d:0d:fc:64:90:31:59:36:d8:86:88:88:30:
+         47:0e:26:2b:9d:3d:fd:99:83:49:08:40:22:40:2b:07:34:2d:
+         02:86:5c:32:d4:23:9f:ac:87:9e:22:15:6e:62:8f:83:d5:e0:
+         98:74:7f:88:26:9e:02:95:ae:c2:9d:f2:dd
+-----BEGIN CERTIFICATE-----
+MIICCjCCAWugAwIBAgIUShlw3GTKZ2+Th8CBFlQCXdG6/e0wCgYIKoZIzj0EAwIw
+HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDUyMVIxMB4XDTE5MDYyODAyNTQyOFoX
+DTI5MDYyNTAyNTQyOFowITEfMB0GA1UEAwwWU0VSVkVSLUVDRFNBLVNFQ1A1MjFS
+MTCBmzAQBgcqhkjOPQIBBgUrgQQAIwOBhgAEAPN/RrtwpLvKhw5AQohMBey7fDAQ
+fazudZhJPPCW3weduONfxzNKvxyYayyazNi/KbASk/iZY5xrIe8Hil+xZ4S8AKkY
+wV7oc+REWclyZjxFaBded+r4WK2TKDte6l6nvDTMniu75ZlnX2ftkTz/f6c6VQXI
+C8iNEKGWf7Lk89KRcyv5o0IwQDAdBgNVHQ4EFgQUU1W/WheXJCtKBBpyyuRENeRy
+2a4wHwYDVR0jBBgwFoAU6ynqAauMHr/mn0bhUsCskToxUTMwCgYIKoZIzj0EAwID
+gYwAMIGIAkIA1QtrFDLHkfUaXsbW3jEylvXyjJFZUJ2zfvoeAFBsIqEdDSEkUxiz
+bq6LYeBBsPvffH/P1SYTKcFACW+kZfc8MesCQgFA1OQ9DfxkkDFZNtiGiIgwRw4m
+K509/ZmDSQhAIkArBzQtAoZcMtQjn6yHniIVbmKPg9XgmHR/iCaeApWuwp3y3Q==
+-----END CERTIFICATE-----
