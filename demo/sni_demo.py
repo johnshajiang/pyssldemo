@@ -27,5 +27,3 @@ if __name__ == '__main__':
             _client.connect(port=_port)
             if server_name != _s_thread.server.server_name:
                 raise RuntimeWarning(f'Unexpected server name: {_s_thread.server.server_name}')
-
-        Client.signal_close_server(context=_client.context, port=_port)
