@@ -38,5 +38,3 @@ if __name__ == '__main__':
         for _protocol in (Protocols.TLSV1_2, Protocols.TLSV1_3):
             _context = utils.create_context(min_protocol=_protocol, max_protocol=_protocol)
             run_case(_context, _port)
-
-        Client.signal_close_server(context=_context, port=_port)

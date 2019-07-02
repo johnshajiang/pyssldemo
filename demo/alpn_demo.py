@@ -27,5 +27,3 @@ if __name__ == '__main__':
 
             if _negotiated_app_protocol != 'http/2':
                 raise RuntimeWarning(f'Unexpected app protocol: {_client.get_app_protocol()}')
-
-        Client.signal_close_server(context=_client.context, port=_port)

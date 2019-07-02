@@ -22,5 +22,3 @@ if __name__ == '__main__':
 
         _client = Client()
         _client.connect(port=_port)
-
-        Client.signal_close_server(context=_client.context, port=_port)

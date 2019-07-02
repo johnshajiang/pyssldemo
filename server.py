@@ -71,21 +71,26 @@ class Server(Peer):
     def accept(self):
         self.log('Accepting connection ...')
         while True:
-            self.c_socket, _addr = self.s_socket.accept()
+            try:
+                self.c_socket, _addr = self.s_socket.accept()
+                self.log(f'Client address: {_addr}')
+                Thread(target=self.connect(self.c_socket)).start()
+            except Exception:
+                self.log('Server was stopped')
+                break
 
-            self.log(f'Client address: {_addr}')
-            self.log(f'Negotiated protocol: {self.c_socket.version()}')
-            self.log(f'Negotiated cipher suite: {self.c_socket.cipher()}')
+    def connect(self, c_socket):
+        self.log(f'Negotiated protocol: {c_socket.version()}')
+        self.log(f'Negotiated cipher suite: {c_socket.cipher()}')
 
-            with self.c_socket:
-                request = self.c_socket.recv(1024)
-                self.log(f'Request: {request}')
-                if request == utils.SERVER_EXIT_FLAG:
-                    self.c_socket.sendall(b'Exiting ...')
-                    break
-                else:
-                    self.c_socket.sendall(b'Client said: ' + request)
-                    self.log('Send response')
+        with c_socket:
+            request = c_socket.recv(1024)
+            self.log(f'Request: {request}')
+            if request == utils.SERVER_EXIT_FLAG:
+                c_socket.sendall(b'Exiting ...')
+            else:
+                c_socket.sendall(b'Client said: ' + request)
+                self.log('Send response')
 
     def close(self):
         self.s_socket.close()

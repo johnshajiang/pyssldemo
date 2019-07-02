@@ -25,8 +25,6 @@ def run_case(protocol, cipher_suite):
         with Client(context=_context) as _client:
             _client.connect(port=_port)
 
-        Client.signal_close_server(context=_client.context, port=_port)
-
 
 if __name__ == '__main__':
     print(ssl.OPENSSL_VERSION)

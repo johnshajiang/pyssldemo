@@ -4,6 +4,7 @@
 TLS client
 """
 
+from threading import Thread
 import socket
 import ssl
 from pyssldemo.peer import Peer
@@ -62,13 +63,21 @@ class Client(Peer):
     def get_log_path(self):
         return 'client.log'
 
-    @staticmethod
-    def signal_close_server(context, host='localhost', port=443):
-        """ Connect to server and inform it to close """
 
-        with Client(context, None, False) as _client:
-            _client.log('Signal server to close ...')
-            _client.connect(host, port, msg=utils.SERVER_EXIT_FLAG)
+class ClientThread(Thread):
+    def __init__(self, client, port):
+        Thread.__init__(self)
+        self.client = client
+        self.port = port
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.client.close()
+
+    def run(self):
+        self.client.connect(port=self.port)
 
 
 if __name__ == '__main__':
