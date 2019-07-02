@@ -88,7 +88,5 @@ if __name__ == '__main__':
     try:
         with Client() as _client:
             _client.connect(_host, _port, b'Hello')
-
-        Client.signal_close_server(_client.context, _host, _port)
     except KeyboardInterrupt:
         print('Client exited')
