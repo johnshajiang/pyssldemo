@@ -29,6 +29,21 @@ def tls_version(protocol):
         return None
 
 
+def tls_protocol(version):
+    """ Convert Protocol to TLS protocol option """
+
+    if version == ssl.TLSVersion.TLSv1:
+        return Protocols.TLSV1_0
+    elif version == ssl.TLSVersion.TLSv1_1:
+        return Protocols.TLSV1_1
+    elif version == ssl.TLSVersion.TLSv1_2:
+        return Protocols.TLSV1_2
+    elif version == ssl.TLSVersion.TLSv1_3:
+        return Protocols.TLSV1_3
+    else:
+        return None
+
+
 def openssl_cs(cipher_suites):
     """ Convert CipherSuites to OpenSSL cipher suite names """
 
@@ -89,9 +104,16 @@ def create_context(
     return _context
 
 
-def func_separator(func):
-    def wrapper(*args, **kwargs):
-        print(f'========== {func.__name__} start ==========')
-        func(*args, **kwargs)
-        print(f'========== {func.__name__} end ==========')
+def func_separator(title=None):
+    def wrapper(func):
+        if title is None:
+            _title = func.__name__
+        else:
+            _title = title
+
+        def func_wrapper(*args, **kwargs):
+            print(f'========== {_title} start ==========')
+            func(*args, **kwargs)
+            print(f'========== {_title} end ==========')
+        return func_wrapper
     return wrapper
