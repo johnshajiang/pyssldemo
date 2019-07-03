@@ -1,0 +1,74 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            58:d6:62:2d:db:84:c9:aa:a4:b9:93:7e:df:b6:9d:61:10:3e:a6:76
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN = CA-RSA
+        Validity
+            Not Before: Jun 28 02:54:27 2019 GMT
+            Not After : Jun 25 02:54:27 2029 GMT
+        Subject: CN = SERVER-RSA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:bb:37:d0:79:aa:00:50:32:81:3f:07:4e:42:24:
+                    e6:55:90:d0:9b:68:da:4d:2c:e2:32:83:9e:90:9a:
+                    ea:0f:ed:7b:ef:ee:59:2a:e4:d4:ff:05:01:e0:de:
+                    39:3e:e4:48:66:6d:a7:10:6c:25:02:b4:55:bf:cc:
+                    91:0b:ee:81:f2:a1:ab:c9:f1:f9:a7:41:89:0c:13:
+                    57:5b:43:e5:79:73:fc:bf:f0:1e:5e:0f:8c:c1:da:
+                    c4:db:62:98:85:56:2f:32:37:dd:f1:01:06:70:be:
+                    19:4c:11:12:f3:d0:f2:41:cd:ce:a1:25:0e:d2:6e:
+                    ca:26:f5:4e:7c:18:b6:18:c4:ca:18:5d:19:11:5a:
+                    ab:a1:f9:c6:c4:9c:27:72:da:14:60:51:cd:20:4e:
+                    3f:43:29:ba:4e:4a:23:5c:08:b0:b7:1c:2d:c4:05:
+                    63:64:75:98:5d:21:06:7d:41:77:6c:92:44:d8:33:
+                    d1:60:44:22:a4:df:0e:d2:41:e4:18:53:f3:33:70:
+                    ac:8b:a5:cc:14:8b:e2:27:df:50:f0:ec:86:36:db:
+                    70:dd:90:4a:3e:18:bf:ac:74:b8:ff:77:47:22:1e:
+                    0f:33:9e:68:87:82:de:aa:05:b6:44:19:a1:6c:4a:
+                    4f:ae:8b:d9:8d:81:ee:ed:61:18:70:93:3d:a2:fd:
+                    6f:a9
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                23:6F:8F:3E:6B:4B:68:5C:35:40:C3:3D:5C:3E:A5:3D:06:47:25:BE
+            X509v3 Authority Key Identifier: 
+                keyid:3A:60:5A:49:43:20:64:31:9E:B1:7D:28:96:5D:8C:6E:00:30:A6:35
+
+    Signature Algorithm: sha256WithRSAEncryption
+         9d:ae:86:4d:7c:70:54:ad:41:e4:25:ad:ba:60:f4:f7:14:f7:
+         32:16:7a:0c:95:21:e9:e7:c6:22:a8:11:fd:ae:f9:e3:a0:2c:
+         17:47:dc:6b:dc:d5:e9:66:72:29:b4:36:01:ff:e9:de:4d:27:
+         87:15:6d:93:9a:06:5e:f3:b6:c0:df:06:39:d1:0e:b8:4c:6c:
+         94:1b:d2:91:34:01:14:21:f4:ad:22:e7:87:f5:68:c4:e9:b4:
+         fc:89:ed:2c:04:31:bf:b7:a3:09:4f:98:0f:64:b8:cd:5d:62:
+         f9:1a:c2:87:60:83:5b:87:a9:7c:4b:18:9c:f3:29:43:2d:cc:
+         cd:74:3b:b1:9d:59:d5:96:bb:73:50:b5:3d:ec:7d:70:6c:95:
+         c3:58:1d:bf:73:88:00:b6:60:15:c2:1b:8c:6e:18:a0:a8:6b:
+         95:f2:58:ba:0a:09:f7:dc:c3:54:ef:bd:86:00:7e:af:e9:5f:
+         70:c8:05:46:54:0e:2e:e5:7f:03:47:0b:0b:5b:9e:14:08:0f:
+         ce:67:e3:be:94:25:c5:a7:5f:eb:12:5c:67:f0:fe:5f:e7:dd:
+         d8:04:7f:65:5c:b0:8c:97:06:2c:8c:7d:fb:62:ea:16:65:d4:
+         75:36:c2:18:0d:1a:08:73:99:e1:0b:6e:f2:c8:4f:77:25:42:
+         f8:13:4f:be
+-----BEGIN CERTIFICATE-----
+MIIC9jCCAd6gAwIBAgIUWNZiLduEyaqkuZN+37adYRA+pnYwDQYJKoZIhvcNAQEL
+BQAwETEPMA0GA1UEAwwGQ0EtUlNBMB4XDTE5MDYyODAyNTQyN1oXDTI5MDYyNTAy
+NTQyN1owFTETMBEGA1UEAwwKU0VSVkVSLVJTQTCCASIwDQYJKoZIhvcNAQEBBQAD
+ggEPADCCAQoCggEBALs30HmqAFAygT8HTkIk5lWQ0Jto2k0s4jKDnpCa6g/te+/u
+WSrk1P8FAeDeOT7kSGZtpxBsJQK0Vb/MkQvugfKhq8nx+adBiQwTV1tD5Xlz/L/w
+Hl4PjMHaxNtimIVWLzI33fEBBnC+GUwREvPQ8kHNzqElDtJuyib1TnwYthjEyhhd
+GRFaq6H5xsScJ3LaFGBRzSBOP0Mpuk5KI1wIsLccLcQFY2R1mF0hBn1Bd2ySRNgz
+0WBEIqTfDtJB5BhT8zNwrIulzBSL4iffUPDshjbbcN2QSj4Yv6x0uP93RyIeDzOe
+aIeC3qoFtkQZoWxKT66L2Y2B7u1hGHCTPaL9b6kCAwEAAaNCMEAwHQYDVR0OBBYE
+FCNvjz5rS2hcNUDDPVw+pT0GRyW+MB8GA1UdIwQYMBaAFDpgWklDIGQxnrF9KJZd
+jG4AMKY1MA0GCSqGSIb3DQEBCwUAA4IBAQCdroZNfHBUrUHkJa26YPT3FPcyFnoM
+lSHp58YiqBH9rvnjoCwXR9xr3NXpZnIptDYB/+neTSeHFW2TmgZe87bA3wY50Q64
+TGyUG9KRNAEUIfStIueH9WjE6bT8ie0sBDG/t6MJT5gPZLjNXWL5GsKHYINbh6l8
+Sxic8ylDLczNdDuxnVnVlrtzULU97H1wbJXDWB2/c4gAtmAVwhuMbhigqGuV8li6
+Cgn33MNU772GAH6v6V9wyAVGVA4u5X8DRwsLW54UCA/OZ+O+lCXFp1/rElxn8P5f
+593YBH9lXLCMlwYsjH37YuoWZdR1NsIYDRoIc5nhC27yyE93JUL4E0++
+-----END CERTIFICATE-----
