@@ -11,6 +11,15 @@ from pyssldemo.client import Client, ClientThread
 from pyssldemo import utils
 
 
+def run_case(protocol, cipher_suite):
+    _context = utils.create_context(min_protocol=protocol,
+                                    max_protocol=protocol,
+                                    cipher_suites=(cipher_suite,))
+    _c_thread = ClientThread(Client(context=_context), _port)
+    _c_thread.start()
+    return _c_thread
+
+
 if __name__ == '__main__':
     print(ssl.OPENSSL_VERSION)
 
@@ -26,16 +35,12 @@ if __name__ == '__main__':
                                   CipherSuites.TLS_AES_256_GCM_SHA384,
                                   CipherSuites.TLS_AES_128_GCM_SHA256):
 
-                # If the cipher suite is not supported by the TLS protocol, the case just be ignored.
+                # If the cipher suite is not supported by the TLS protocol,
+                # the case just be ignored.
                 if not _cipher_suite.supported_by(_protocol):
                     continue
 
-                _context = utils.create_context(min_protocol=_protocol,
-                                                max_protocol=_protocol,
-                                                cipher_suites=(_cipher_suite,))
-                _c_thread = ClientThread(Client(context=_context), _port)
-                _c_threads.append(_c_thread)
-                _c_thread.start()
+                _c_threads.append(run_case(_protocol, _cipher_suite))
 
         for _c_thread in _c_threads:
             _c_thread.join()
