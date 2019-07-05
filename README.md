@@ -1,5 +1,5 @@
 ## Description
-A set of simple demonstrations on Python ssl module. All the demos, which are in folder `pyssldemo/demo`, just focus on TLS 1.2 and/or TLS 1.3.
+A set of simple demonstrations on Python ssl module. All the demos, which are in package `pyssldemo.demo`, just focus on TLS 1.2 and/or TLS 1.3.
 
 ## Versions
 Python: `3.7.3`
