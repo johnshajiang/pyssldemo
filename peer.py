@@ -5,7 +5,6 @@ TLS peer
 """
 
 from abc import ABCMeta, abstractmethod
-import os
 import ssl
 from pyssldemo import utils
 from pyssldemo.ssl_logger import SSLLogger

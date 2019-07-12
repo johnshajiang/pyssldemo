@@ -11,9 +11,6 @@ from pyssldemo.params import Protocols, CipherSuites
 from pyssldemo.certs import CertGroups
 
 
-SERVER_EXIT_FLAG = b'EXIT'
-
-
 def tls_version(protocol):
     """ Convert Protocol to TLS protocol option """
 
