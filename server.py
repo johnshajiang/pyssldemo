@@ -86,11 +86,8 @@ class Server(Peer):
         with c_socket:
             request = c_socket.recv(1024)
             self.log(f'Request: {request}')
-            if request == utils.SERVER_EXIT_FLAG:
-                c_socket.sendall(b'Exiting ...')
-            else:
-                c_socket.sendall(b'Client said: ' + request)
-                self.log('Send response')
+            c_socket.sendall(b'Client said: ' + request)
+            self.log('Send response')
 
     def close(self):
         self.s_socket.close()
