@@ -2,48 +2,50 @@ Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
-            0b:0c:9c:a3:3c:11:76:f0:2f:ab:5d:e7:b7:c1:97:ae:bd:04:39:14
-        Signature Algorithm: ecdsa-with-SHA256
+            6a:50:94:8a:dc:f1:79:f8:82:bd:4e:7b:e9:90:19:e2:eb:1a:2c:60
+        Signature Algorithm: ecdsa-with-SHA384
         Issuer: CN = CA-ECDSA-SECP384R1
         Validity
-            Not Before: Jun 28 02:54:28 2019 GMT
-            Not After : Jun 25 02:54:28 2029 GMT
+            Not Before: Jul 30 09:20:59 2020 GMT
+            Not After : Jul 28 09:20:59 2030 GMT
         Subject: CN = CLIENT-ECDSA-SECP384R1
         Subject Public Key Info:
             Public Key Algorithm: id-ecPublicKey
                 Public-Key: (384 bit)
                 pub:
-                    04:33:2c:e0:9a:98:f3:e6:4a:95:bc:f7:ec:52:f3:
-                    f9:53:b4:96:a4:02:0a:38:45:fd:a8:37:00:87:bd:
-                    74:a9:3d:35:8a:7e:c1:73:8b:09:88:5b:b0:24:91:
-                    b5:24:d1:46:e3:d9:4c:c2:6d:83:b8:36:ea:66:23:
-                    d0:fb:3c:bc:48:19:5b:fd:2a:18:a2:f9:48:75:d7:
-                    80:1e:ba:61:29:94:29:aa:08:89:2c:03:ad:db:5b:
-                    94:e3:43:b4:ef:a6:6d
+                    04:17:95:b8:33:02:f3:c1:f6:98:ed:aa:e8:18:05:
+                    27:c5:07:7a:f2:15:86:7d:4d:c7:ce:9a:ec:5b:8a:
+                    b8:94:cd:3a:42:5e:ec:4a:f9:9f:fd:c3:2a:d6:09:
+                    5c:d3:bf:55:99:76:21:2c:14:bf:88:af:0e:c9:d1:
+                    78:54:13:1b:b0:d6:2f:2c:76:9d:60:36:45:13:d6:
+                    be:a0:32:0d:1c:2d:19:e5:1c:8e:42:8d:75:6b:cf:
+                    88:e8:37:b4:c4:67:60
                 ASN1 OID: secp384r1
                 NIST CURVE: P-384
         X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
             X509v3 Subject Key Identifier: 
-                4F:4A:BB:40:E7:DB:B1:06:B7:2B:23:42:46:41:63:48:92:C3:59:B7
+                D6:26:CD:7C:4E:28:A3:E2:66:86:39:81:C0:4F:F4:CF:FD:C2:C9:F2
             X509v3 Authority Key Identifier: 
-                keyid:3C:0C:58:BD:97:17:25:ED:BB:79:EE:D2:46:4B:42:CE:67:BD:1B:77
+                keyid:44:F7:0E:8D:77:4C:FB:B3:5C:4F:9D:D1:1E:25:8B:EC:46:54:5E:C0
 
-    Signature Algorithm: ecdsa-with-SHA256
-         30:64:02:30:44:d7:b0:d1:bd:ef:5d:bd:b7:d0:bd:62:c1:96:
-         eb:56:7d:10:f3:cc:68:a7:d4:d0:fa:43:a4:b1:23:88:52:76:
-         3a:74:e3:70:b8:c7:d8:37:09:7a:b2:85:76:b2:4b:94:02:30:
-         4a:73:bc:5b:1f:01:7f:b8:4d:83:c4:9b:b8:ce:69:73:8a:19:
-         59:17:b2:70:b3:c8:47:ba:8b:aa:cc:20:04:88:3a:09:88:70:
-         64:7c:f0:05:bd:da:14:dd:20:b4:0b:9b
+    Signature Algorithm: ecdsa-with-SHA384
+         30:64:02:30:44:2a:8f:5c:9f:ee:2d:30:c4:dc:4c:e6:b1:7e:
+         a2:df:17:c1:d6:c5:27:ec:2e:eb:9e:0b:a9:59:c3:3a:76:00:
+         03:5b:59:c8:42:23:bd:30:e7:08:16:74:75:1e:1a:d1:02:30:
+         22:89:93:bb:3d:1e:e2:2d:25:4b:d5:62:77:00:a2:ef:80:d6:
+         75:ed:64:bb:2f:97:bc:a4:0b:8d:a5:7c:4a:42:e3:d0:c1:08:
+         dd:99:52:fd:9e:69:68:03:15:3e:9c:06
 -----BEGIN CERTIFICATE-----
-MIIBvjCCAUWgAwIBAgIUCwycozwRdvAvq13nt8GXrr0EORQwCgYIKoZIzj0EAwIw
-HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDM4NFIxMB4XDTE5MDYyODAyNTQyOFoX
-DTI5MDYyNTAyNTQyOFowITEfMB0GA1UEAwwWQ0xJRU5ULUVDRFNBLVNFQ1AzODRS
-MTB2MBAGByqGSM49AgEGBSuBBAAiA2IABDMs4JqY8+ZKlbz37FLz+VO0lqQCCjhF
-/ag3AIe9dKk9NYp+wXOLCYhbsCSRtSTRRuPZTMJtg7g26mYj0Ps8vEgZW/0qGKL5
-SHXXgB66YSmUKaoIiSwDrdtblONDtO+mbaNCMEAwHQYDVR0OBBYEFE9Ku0Dn27EG
-tysjQkZBY0iSw1m3MB8GA1UdIwQYMBaAFDwMWL2XFyXtu3nu0kZLQs5nvRt3MAoG
-CCqGSM49BAMCA2cAMGQCMETXsNG97129t9C9YsGW61Z9EPPMaKfU0PpDpLEjiFJ2
-OnTjcLjH2DcJerKFdrJLlAIwSnO8Wx8Bf7hNg8SbuM5pc4oZWReycLPIR7qLqswg
-BIg6CYhwZHzwBb3aFN0gtAub
+MIIBzDCCAVOgAwIBAgIUalCUitzxefiCvU576ZAZ4usaLGAwCgYIKoZIzj0EAwMw
+HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDM4NFIxMB4XDTIwMDczMDA5MjA1OVoX
+DTMwMDcyODA5MjA1OVowITEfMB0GA1UEAwwWQ0xJRU5ULUVDRFNBLVNFQ1AzODRS
+MTB2MBAGByqGSM49AgEGBSuBBAAiA2IABBeVuDMC88H2mO2q6BgFJ8UHevIVhn1N
+x86a7FuKuJTNOkJe7Er5n/3DKtYJXNO/VZl2ISwUv4ivDsnReFQTG7DWLyx2nWA2
+RRPWvqAyDRwtGeUcjkKNdWvPiOg3tMRnYKNQME4wDAYDVR0TAQH/BAIwADAdBgNV
+HQ4EFgQU1ibNfE4oo+JmhjmBwE/0z/3CyfIwHwYDVR0jBBgwFoAURPcOjXdM+7Nc
+T53RHiWL7EZUXsAwCgYIKoZIzj0EAwMDZwAwZAIwRCqPXJ/uLTDE3EzmsX6i3xfB
+1sUn7C7rngupWcM6dgADW1nIQiO9MOcIFnR1HhrRAjAiiZO7PR7iLSVL1WJ3AKLv
+gNZ17WS7L5e8pAuNpXxKQuPQwQjdmVL9nmloAxU+nAY=
 -----END CERTIFICATE-----

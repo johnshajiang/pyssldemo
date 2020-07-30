@@ -2,43 +2,45 @@ Certificate:
     Data:
         Version: 3 (0x2)
         Serial Number:
-            20:9a:85:b9:d8:a9:80:5a:8b:43:db:f1:cb:4f:40:ea:8a:a1:84:92
+            72:9d:1f:00:47:2d:da:c9:47:80:c0:aa:2e:dd:25:af:ea:cf:a3:d0
         Signature Algorithm: ecdsa-with-SHA256
         Issuer: CN = CA-ECDSA-SECP256R1
         Validity
-            Not Before: Jun 28 02:54:28 2019 GMT
-            Not After : Jun 25 02:54:28 2029 GMT
+            Not Before: Jul 30 09:20:59 2020 GMT
+            Not After : Jul 28 09:20:59 2030 GMT
         Subject: CN = CLIENT-ECDSA-SECP256R1
         Subject Public Key Info:
             Public Key Algorithm: id-ecPublicKey
                 Public-Key: (256 bit)
                 pub:
-                    04:05:07:47:00:a2:91:cb:82:bb:4b:ff:98:16:78:
-                    55:18:3f:fd:aa:e4:26:47:22:d1:01:87:4b:c7:0d:
-                    fe:e4:1a:61:82:77:8f:8e:e6:ff:af:61:67:c6:e6:
-                    3b:66:08:f5:89:4f:70:5a:21:c8:e6:89:eb:bf:10:
-                    c7:c0:68:3c:bd
+                    04:9f:2b:1a:46:4e:76:fe:fd:88:4e:10:4a:7f:d8:
+                    f9:43:93:0b:9d:a0:9e:11:8d:a5:83:0b:7c:5d:93:
+                    54:d7:d2:fc:ea:6f:27:44:e6:03:1c:24:e1:06:ba:
+                    81:14:54:4c:1f:9e:a1:d0:32:38:ab:5f:08:6f:0e:
+                    09:08:49:1d:6d
                 ASN1 OID: prime256v1
                 NIST CURVE: P-256
         X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
             X509v3 Subject Key Identifier: 
-                8B:05:E5:01:2A:B5:3D:03:84:99:C2:55:F1:D8:72:1D:7C:92:52:F8
+                C1:33:02:68:4F:02:53:16:5E:16:D4:3B:76:54:62:EB:DB:D6:07:11
             X509v3 Authority Key Identifier: 
-                keyid:2C:1B:F6:89:59:08:79:CF:32:F2:DD:EC:2D:BD:DE:96:03:C9:E3:82
+                keyid:31:49:26:40:5F:9B:BA:12:CD:7C:44:37:12:2F:FE:76:F9:D7:37:2A
 
     Signature Algorithm: ecdsa-with-SHA256
-         30:44:02:20:34:29:bc:36:52:b6:00:3a:06:56:63:85:34:a4:
-         cb:75:9b:6c:ba:d2:91:b1:31:a2:8a:f0:f9:f7:4d:a3:b8:f8:
-         02:20:1a:40:5d:dc:7c:31:84:2e:61:12:b9:e8:a7:32:86:b2:
-         a6:e3:56:0d:cd:18:c7:65:8f:fa:b8:52:65:31:6e:0c
+         30:45:02:20:34:fd:e6:9e:04:2c:c0:ab:4c:92:ad:ee:44:0b:
+         e1:a7:ec:fd:b5:4b:35:81:d9:72:15:5b:79:d0:96:6d:d8:35:
+         02:21:00:ea:4f:c1:e2:8c:e7:6c:84:bd:df:71:d5:47:8c:36:
+         c1:a4:6f:bd:0f:78:d1:ac:56:84:8c:f9:c2:ef:c0:0f:96
 -----BEGIN CERTIFICATE-----
-MIIBgTCCASigAwIBAgIUIJqFudipgFqLQ9vxy09A6oqhhJIwCgYIKoZIzj0EAwIw
-HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDI1NlIxMB4XDTE5MDYyODAyNTQyOFoX
-DTI5MDYyNTAyNTQyOFowITEfMB0GA1UEAwwWQ0xJRU5ULUVDRFNBLVNFQ1AyNTZS
-MTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABAUHRwCikcuCu0v/mBZ4VRg//ark
-Jkci0QGHS8cN/uQaYYJ3j47m/69hZ8bmO2YI9YlPcFohyOaJ678Qx8BoPL2jQjBA
-MB0GA1UdDgQWBBSLBeUBKrU9A4SZwlXx2HIdfJJS+DAfBgNVHSMEGDAWgBQsG/aJ
-WQh5zzLy3ewtvd6WA8njgjAKBggqhkjOPQQDAgNHADBEAiA0Kbw2UrYAOgZWY4U0
-pMt1m2y60pGxMaKK8Pn3TaO4+AIgGkBd3HwxhC5hErnopzKGsqbjVg3NGMdlj/q4
-UmUxbgw=
+MIIBkDCCATagAwIBAgIUcp0fAEct2slHgMCqLt0lr+rPo9AwCgYIKoZIzj0EAwIw
+HTEbMBkGA1UEAwwSQ0EtRUNEU0EtU0VDUDI1NlIxMB4XDTIwMDczMDA5MjA1OVoX
+DTMwMDcyODA5MjA1OVowITEfMB0GA1UEAwwWQ0xJRU5ULUVDRFNBLVNFQ1AyNTZS
+MTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJ8rGkZOdv79iE4QSn/Y+UOTC52g
+nhGNpYMLfF2TVNfS/OpvJ0TmAxwk4Qa6gRRUTB+eodAyOKtfCG8OCQhJHW2jUDBO
+MAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYEFMEzAmhPAlMWXhbUO3ZUYuvb1gcRMB8G
+A1UdIwQYMBaAFDFJJkBfm7oSzXxENxIv/nb51zcqMAoGCCqGSM49BAMCA0gAMEUC
+IDT95p4ELMCrTJKt7kQL4afs/bVLNYHZchVbedCWbdg1AiEA6k/B4oznbIS933HV
+R4w2waRvvQ940axWhIz5wu/AD5Y=
 -----END CERTIFICATE-----
