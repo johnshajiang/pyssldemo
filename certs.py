@@ -14,20 +14,18 @@ class Cert(object):
             key_algo,
             sig_algo,
             hash_algo,
-            cert_file,
-            priv_key_file):
+            cert_name):
         self.key_algo = key_algo
         self.sig_algo = sig_algo
         self.hash_algo = hash_algo
-        self.cert_file = cert_file
-        self.priv_key_file = priv_key_file
+        self.cert_name = cert_name
 
     def __eq__(self, other):
-        return self.cert_file == other.cert_file
+        return self.cert_name == other.cert_name
 
     def __repr__(self):
-        return 'KeyAlgo: %s, SigAlgo: %s, HashAlgo: %s\nCert: %s\nPrivateKey: %s' % (
-            self.key_algo, self.sig_algo, self.hash_algo, self.cert_file, self.priv_key_file)
+        return 'KeyAlgo: %s, SigAlgo: %s, HashAlgo: %s\nCert: %s' % (
+            self.key_algo, self.sig_algo, self.hash_algo, self.cert_name)
 
     def __str__(self):
         return 'KeyAlgo: %s, SigAlgo: %s, HashAlgo: %s' % (
@@ -40,85 +38,73 @@ class Certs(Enum):
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'CA_ECDSA_SECP256R1.cer',
-        'CA_ECDSA_SECP256R1.key')
+        'CA_ECDSA_SECP256R1')
 
     CA_ECDSA_SECP384R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'CA_ECDSA_SECP384R1.cer',
-        'CA_ECDSA_SECP384R1.key')
+        'CA_ECDSA_SECP384R1')
 
     CA_ECDSA_SECP521R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'CA_ECDSA_SECP521R1.cer',
-        'CA_ECDSA_SECP521R1.key')
+        'CA_ECDSA_SECP521R1')
 
     CA_RSA = Cert(
         KeyAlgos.RSA,
         SigAlgos.RSA,
         HashAlgos.SHA256,
-        'CA_RSA.cer',
-        'CA_RSA.key')
+        'CA_RSA')
 
     SERVER_ECDSA_SECP256R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'SERVER_ECDSA_SECP256R1.cer',
-        'SERVER_ECDSA_SECP256R1.key')
+        'SERVER_ECDSA_SECP256R1')
 
     SERVER_ECDSA_SECP384R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'SERVER_ECDSA_SECP384R1.cer',
-        'SERVER_ECDSA_SECP384R1.key')
+        'SERVER_ECDSA_SECP384R1')
 
     SERVER_ECDSA_SECP521R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'SERVER_ECDSA_SECP521R1.cer',
-        'SERVER_ECDSA_SECP521R1.key')
+        'SERVER_ECDSA_SECP521R1')
 
     SERVER_RSA = Cert(
         KeyAlgos.RSA,
         SigAlgos.RSA,
         HashAlgos.SHA256,
-        'SERVER_RSA.cer',
-        'SERVER_RSA.key')
+        'SERVER_RSA')
 
     CLIENT_ECDSA_SECP256R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'CLIENT_ECDSA_SECP256R1.cer',
-        'CLIENT_ECDSA_SECP256R1.key')
+        'CLIENT_ECDSA_SECP256R1')
 
     CLIENT_ECDSA_SECP384R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'CLIENT_ECDSA_SECP384R1.cer',
-        'CLIENT_ECDSA_SECP384R1.key')
+        'CLIENT_ECDSA_SECP384R1')
 
     CLIENT_ECDSA_SECP521R1 = Cert(
         KeyAlgos.EC,
         SigAlgos.ECDSA,
         HashAlgos.SHA256,
-        'CLIENT_ECDSA_SECP521R1.cer',
-        'CLIENT_ECDSA_SECP521R1.key')
+        'CLIENT_ECDSA_SECP521R1')
 
     CLIENT_RSA = Cert(
         KeyAlgos.RSA,
         SigAlgos.RSA,
         HashAlgos.SHA256,
-        'CLIENT_RSA.cer',
-        'CLIENT_RSA.key')
+        'CLIENT_RSA')
 
 
 class CertGroup(object):

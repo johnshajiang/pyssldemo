@@ -10,7 +10,6 @@ import os
 import socket
 import ssl
 from pyssldemo.peer import Peer
-from pyssldemo import utils
 
 
 class Server(Peer):

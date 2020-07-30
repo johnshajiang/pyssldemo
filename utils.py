@@ -66,7 +66,15 @@ CERT_DIR = os.getenv('PYSSLDEMO_CERT_DIR')
 
 
 def get_cert_path(cert_file):
-    return os.path.join(CERT_DIR, cert_file)
+    return __get_certs_file_path(cert_file, ".cer")
+
+
+def get_key_path(key_file):
+    return __get_certs_file_path(key_file, ".key")
+
+
+def __get_certs_file_path(file, ext):
+    return os.path.join(CERT_DIR, file + ext)
 
 
 def create_context(
@@ -79,7 +87,8 @@ def create_context(
         CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,
         CipherSuites.TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA)):
     """
-    Create SSL context with specified protocols, certificate group and cipher suites.
+    Create SSL context with specified protocols, certificate group
+    and cipher suites.
     """
 
     _context = ssl.SSLContext()
@@ -89,11 +98,10 @@ def create_context(
     _context.set_ciphers(openssl_cs(cipher_suites))
 
     _context.load_verify_locations(
-        cafile=get_cert_path(cert_group.value.ca.value.cert_file))
+        cafile=get_cert_path(cert_group.value.ca.value.cert_name))
     _context.load_cert_chain(
-        certfile=get_cert_path(
-            cert_group.value.server_cert.value.cert_file), keyfile=get_cert_path(
-            cert_group.value.server_cert.value.priv_key_file))
+        certfile=get_cert_path(cert_group.value.server_cert.value.cert_name),
+        keyfile=get_key_path(cert_group.value.server_cert.value.cert_name))
 
     _context.verify_mode = ssl.CERT_NONE
     _context.check_hostname = False
