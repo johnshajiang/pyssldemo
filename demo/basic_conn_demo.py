@@ -5,9 +5,9 @@ A simple demo on basic connection with server authentication.
 """
 
 import ssl
-from pyssldemo.server import Server, ServerThread
-from pyssldemo.client import Client
 
+from pyssldemo.client import Client
+from pyssldemo.server import Server, ServerThread
 
 if __name__ == '__main__':
     print(ssl.OPENSSL_VERSION)

@@ -4,11 +4,12 @@
 TLS server
 """
 
-import time
-from threading import Thread
 import os
 import socket
 import ssl
+import time
+from threading import Thread
+
 from pyssldemo.peer import Peer
 
 

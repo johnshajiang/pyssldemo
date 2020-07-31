@@ -5,10 +5,11 @@ A basic connection demo with different TLS protocols and cipher suites.
 """
 
 import ssl
+
+from pyssldemo import utils
+from pyssldemo.client import Client
 from pyssldemo.params import Protocols, CipherSuites
 from pyssldemo.server import Server, ServerThread
-from pyssldemo.client import Client
-from pyssldemo import utils
 
 
 @utils.func_separator()

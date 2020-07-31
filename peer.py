@@ -4,8 +4,9 @@
 TLS peer
 """
 
-from abc import ABCMeta, abstractmethod
 import ssl
+from abc import ABCMeta, abstractmethod
+
 from pyssldemo import utils
 from pyssldemo.ssl_logger import SSLLogger
 

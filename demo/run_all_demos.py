@@ -4,10 +4,9 @@
 Run all demos.
 """
 
-import subprocess
 import os
 import ssl
-
+import subprocess
 
 demo_names = (
     'alpn_demo',

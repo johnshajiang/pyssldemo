@@ -4,11 +4,11 @@
 A simple demo on server name indication.
 """
 
-import time
 import ssl
-from pyssldemo.server import Server, ServerThread
-from pyssldemo.client import Client
+import time
 
+from pyssldemo.client import Client
+from pyssldemo.server import Server, ServerThread
 
 if __name__ == '__main__':
     print(ssl.OPENSSL_VERSION)

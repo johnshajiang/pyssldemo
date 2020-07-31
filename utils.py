@@ -7,8 +7,9 @@ Utilities
 import os
 import os.path
 import ssl
-from pyssldemo.params import Protocols, CipherSuites
+
 from pyssldemo.certs import CertGroups
+from pyssldemo.params import Protocols, CipherSuites
 
 
 def tls_version(protocol):

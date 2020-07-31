@@ -5,10 +5,11 @@ Multiple clients connect to one server concurrently.
 """
 
 import ssl
+
+from pyssldemo import utils
+from pyssldemo.client import Client, ClientThread
 from pyssldemo.params import Protocols, CipherSuites
 from pyssldemo.server import Server, ServerThread
-from pyssldemo.client import Client, ClientThread
-from pyssldemo import utils
 
 
 def run_case(protocol, cipher_suite):

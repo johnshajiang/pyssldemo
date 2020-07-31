@@ -5,10 +5,11 @@ A simple demo on session resumption over TLS 1.2 and 1.3.
 """
 
 import ssl
-from pyssldemo.server import Server, ServerThread
+
+from pyssldemo import utils
 from pyssldemo.client import Client
 from pyssldemo.params import Protocols
-from pyssldemo import utils
+from pyssldemo.server import Server, ServerThread
 
 
 @utils.func_separator()

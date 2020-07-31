@@ -5,6 +5,7 @@ Certificates and the associated private keys
 """
 
 from enum import Enum, unique
+
 from pyssldemo.params import KeyAlgos, SigAlgos, HashAlgos
 
 

@@ -4,11 +4,11 @@
 TLS client
 """
 
-from threading import Thread
 import socket
 import ssl
+from threading import Thread
+
 from pyssldemo.peer import Peer
-from pyssldemo import utils
 
 
 class Client(Peer):
