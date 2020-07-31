@@ -23,11 +23,11 @@ class Peer(metaclass=ABCMeta):
 
         self.logger = SSLLogger(type(self).__name__)
 
-    @staticmethod
+    @abstractmethod
     def get_session(self):
         """ Return current SSL session """
 
-    @staticmethod
+    @abstractmethod
     def is_session_resumed(self):
         """ Check if the session is resumed """
 
@@ -39,11 +39,11 @@ class Peer(metaclass=ABCMeta):
         else:
             self.context.verify_mode = ssl.CERT_NONE
 
-    @staticmethod
+    @abstractmethod
     def set_app_protocols(self, *app_protocols):
         """ Set the supported application protocols """
 
-    @staticmethod
+    @abstractmethod
     def get_app_protocol(self):
         """ Return the negotiated application protocol """
 
