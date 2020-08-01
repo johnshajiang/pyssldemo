@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A simple demo on client authentication.
+"""A simple demo on client authentication.
 """
 
 import ssl

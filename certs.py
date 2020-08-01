@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-Certificates and the associated private keys
+"""Certificates and the associated private keys
 """
 
 from enum import Enum, unique

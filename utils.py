@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-Utilities
+"""Utilities
 """
 
 import os

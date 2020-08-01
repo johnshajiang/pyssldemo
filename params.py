@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-Parameters on TLS connection
+"""Parameters on TLS connection
 """
 
 from enum import Enum, unique

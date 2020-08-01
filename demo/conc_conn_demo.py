@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-Multiple clients connect to one server concurrently.
+"""Multiple clients connect to one server concurrently.
 """
 
 import ssl

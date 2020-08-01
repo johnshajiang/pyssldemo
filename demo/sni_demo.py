@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A simple demo on server name indication.
+"""A simple demo on server name indication.
 """
 
 import ssl

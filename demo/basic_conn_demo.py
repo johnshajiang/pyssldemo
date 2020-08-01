@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A simple demo on basic connection with server authentication.
+"""A simple demo on basic connection with server authentication.
 """
 
 import ssl

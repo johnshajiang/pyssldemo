@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A basic connection demo with different TLS protocols and cipher suites.
+"""A basic connection demo with different TLS protocols and cipher suites.
 """
 
 import ssl

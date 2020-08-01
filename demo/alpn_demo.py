@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A simple demo on checking ALPN.
+"""A simple demo on checking ALPN.
 """
 
 import ssl

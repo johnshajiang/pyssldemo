@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A simple logger just recording specified debug logs.
+"""A simple logger just recording specified debug logs.
 """
 
 import logging

@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-Run all demos.
+"""Run all demos.
 """
 
 import os

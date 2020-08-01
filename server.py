@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-TLS server
+"""TLS server
 """
 
 import os
@@ -44,9 +43,6 @@ class Server(Peer):
 
     def is_session_resumed(self):
         return self.s_socket.session_reused
-
-    def set_app_protocols(self, *app_protocols):
-        self.context.set_alpn_protocols(app_protocols)
 
     def get_app_protocol(self):
         return self.s_socket.selected_alpn_protocol()

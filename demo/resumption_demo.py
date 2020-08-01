@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""
-A simple demo on session resumption over TLS 1.2 and 1.3.
+"""A simple demo on session resumption over TLS 1.2 and 1.3.
 """
 
 import ssl
