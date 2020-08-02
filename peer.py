@@ -29,6 +29,12 @@ class Peer(metaclass=ABCMeta):
     def is_session_resumed(self):
         """Check if the session is resumed"""
 
+    def check_crl(self, check_crl):
+        """Indicate if check CRL on the cert chain"""
+
+        if check_crl:
+            self.context.verify_flags = ssl.VERIFY_CRL_CHECK_CHAIN
+
     def set_peer_auth(self, peer_auth):
         """Set if the peer's certificate must be verified"""
 

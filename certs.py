@@ -118,12 +118,12 @@ class CertGroup(object):
 
 
 class CertGroups(Enum):
-    RSA_GROUP = CertGroup(
-        Certs.CA_RSA,
-        Certs.SERVER_RSA,
-        Certs.CLIENT_RSA)
-
     ECDSA_GROUP = CertGroup(
         Certs.CA_ECDSA_SECP256R1,
         Certs.SERVER_ECDSA_SECP256R1,
         Certs.CLIENT_ECDSA_SECP256R1)
+
+    RSA_GROUP = CertGroup(
+        Certs.CA_RSA,
+        Certs.SERVER_RSA,
+        Certs.CLIENT_RSA)

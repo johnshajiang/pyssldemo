@@ -135,6 +135,12 @@ class CipherSuites(Enum):
         KeyExAlgos.ECDHE_ECDSA,
         Protocols.TLSV1_2)
 
+    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 = CipherSuite(
+        0xC02F,
+        'TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256',
+        KeyExAlgos.ECDHE_RSA,
+        Protocols.TLSV1_2)
+
     TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 = CipherSuite(
         0xC030,
         'TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384',

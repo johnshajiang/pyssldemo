@@ -14,7 +14,8 @@ demo_names = (
     'combo_conn_demo',
     'conc_conn_demo',
     'resumption_demo',
-    'sni_demo'
+    'sni_demo',
+    'crl_demo'
 )
 
 

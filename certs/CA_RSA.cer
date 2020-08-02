@@ -35,9 +35,9 @@ Certificate:
         X509v3 extensions:
             X509v3 Basic Constraints: critical
                 CA:TRUE
-            X509v3 Subject Key Identifier: 
+            X509v3 Subject Key Identifier:
                 DA:52:2A:D6:61:35:DB:7A:12:FD:14:FD:AD:78:CA:0B:BD:F9:DD:59
-            X509v3 Authority Key Identifier: 
+            X509v3 Authority Key Identifier:
                 keyid:DA:52:2A:D6:61:35:DB:7A:12:FD:14:FD:AD:78:CA:0B:BD:F9:DD:59
 
             X509v3 Key Usage: critical
@@ -77,3 +77,36 @@ lYjvj3jF0tjyHsKVHE0ZsOWq/kMT8KNdzHAxJrfWwwvRXberLpjyP7GFjJtbm3kK
 hdvwNbaE877QR3jViMvQbWn2E9uDAaFDiOiRLU2Cfp0GtGOKaDBRjR7EvW3h4uG9
 6R0HvZlF4R+jT7aQMBpSk5WEJtv5sdU=
 -----END CERTIFICATE-----
+Certificate Revocation List (CRL):
+        Version 1 (0x0)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN = CA-RSA
+        Last Update: Aug  1 13:11:31 2020 GMT
+        Next Update: Jul 30 13:11:31 2030 GMT
+No Revoked Certificates.
+    Signature Algorithm: sha256WithRSAEncryption
+         6a:3b:98:67:4e:75:72:ae:bb:b9:a1:d1:e7:42:c1:38:09:c0:
+         04:af:8e:dc:ce:06:7f:13:38:03:10:c7:0d:d8:fb:f0:66:cf:
+         f7:24:25:1b:14:13:03:63:13:98:9d:b8:96:84:90:7e:99:97:
+         5b:f9:c4:f9:dc:2c:c9:09:8e:21:58:72:ab:ea:cf:a2:a0:0c:
+         91:27:37:cf:bd:31:65:52:1b:c4:18:14:28:0a:e1:76:4b:9d:
+         c0:f2:c8:ed:cb:68:ff:d9:07:d1:92:f9:bd:f1:92:7a:77:23:
+         47:2f:c6:50:d5:50:9b:f8:fd:b9:e0:07:22:86:15:aa:3b:de:
+         53:d1:88:95:c3:87:b6:33:48:dd:83:9e:5e:df:f4:fa:4f:8a:
+         fc:5e:04:5c:5e:00:5c:32:bf:bd:cb:16:b6:2b:91:e6:a8:ba:
+         1b:f0:bb:1d:74:e8:06:32:f8:ee:33:f1:96:8d:87:58:f2:95:
+         1d:0c:bd:de:af:24:01:1b:83:72:3f:1e:41:93:af:48:e0:07:
+         7a:4d:1d:50:5e:1c:58:b0:c0:ff:ea:63:c4:89:31:61:9f:9c:
+         72:f3:fb:2c:cd:78:fa:d6:a3:26:e9:79:98:a7:c2:1b:d2:bb:
+         ff:77:49:1b:fb:3f:91:ce:46:ee:4e:a7:99:f7:36:e5:36:18:
+         ee:79:6f:77
+-----BEGIN X509 CRL-----
+MIIBVjBAMA0GCSqGSIb3DQEBCwUAMBExDzANBgNVBAMMBkNBLVJTQRcNMjAwODAx
+MTMxMTMxWhcNMzAwNzMwMTMxMTMxWjANBgkqhkiG9w0BAQsFAAOCAQEAajuYZ051
+cq67uaHR50LBOAnABK+O3M4GfxM4AxDHDdj78GbP9yQlGxQTA2MTmJ24loSQfpmX
+W/nE+dwsyQmOIVhyq+rPoqAMkSc3z70xZVIbxBgUKArhdkudwPLI7cto/9kH0ZL5
+vfGSencjRy/GUNVQm/j9ueAHIoYVqjveU9GIlcOHtjNI3YOeXt/0+k+K/F4EXF4A
+XDK/vcsWtiuR5qi6G/C7HXToBjL47jPxlo2HWPKVHQy93q8kARuDcj8eQZOvSOAH
+ek0dUF4cWLDA/+pjxIkxYZ+ccvP7LM14+tajJul5mKfCG9K7/3dJG/s/kc5G7k6n
+mfc25TYY7nlvdw==
+-----END X509 CRL-----
